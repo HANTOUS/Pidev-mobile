@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.pi.tevent;
+package com.pi.tevent.Entities;
 
 /**
  *
