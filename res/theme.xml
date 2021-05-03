@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <image name="about1.jpg"  />
+    <image name="activation-background.jpg"  />
+    <image name="banner1.png"  />
+    <image name="confirmation-background.jpg"  />
+    <image name="facebook-logo.png"  />
+    <image name="Logo-Off.png"  />
+    <image name="offer6.jpg"  />
+    <image name="pdp.jpg"  />
+    <image name="profile-background.jpg"  />
+    <image name="profile-pic.jpg"  />
+    <image name="profile.jpg"  />
+    <image name="signin-background.jpg"  />
+    <image name="signup-background.jpg"  />
+    <theme name="Theme">
+        <val key="@includeNativeBool" value="true" />
+        <val key="Activate.bgImage" value="about1.jpg" />
+        <val key="Activate.bgType" value="33" />
+        <val key="Activate.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Activate.padUnit" value="0,0,2,0" />
+        <val key="Activate.padding" value="0.0,3.0,0.0,0.0" />
+        <val key="Activate.transparency" value="255" />
+        <val key="BottomPad.align" value="4" />
+        <val key="BottomPad.fgColor" value="090031" />
+        <font key="BottomPad.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.0" />
+        <val key="BottomPad.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="BottomPad.padding" value="0.0,0.0,0.0,0.0" />
+        <val key="BottomPad.transparency" value="0" />
+        <val key="Button.align" value="4" />
+        <border key="Button.border" type="round" roundBorderColor="16601174" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="Button.fgColor" value="ffffff" />
+        <font key="Button.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Button.marUnit" value="2,2,2,2" />
+        <val key="Button.margin" value="3.0,3.0,2.0,2.0" />
+        <val key="Button.padUnit" value="2,2,2,2" />
+        <val key="Button.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="Button.press#align" value="4" />
+        <border key="Button.press#border" type="round" roundBorderColor="12982329" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="Button.press#fgColor" value="ffffff" />
+        <font key="Button.press#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Button.press#marUnit" value="2,2,2,2" />
+        <val key="Button.press#margin" value="3.0,3.0,2.0,2.0" />
+        <val key="Button.press#padUnit" value="2,2,2,2" />
+        <val key="Button.press#padding" value="2.0,2.0,2.0,2.0" />
+        <val key="Button.press#transparency" value="0" />
+        <val key="Button.sel#align" value="4" />
+        <border key="Button.sel#border" type="round" roundBorderColor="16601174" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="Button.sel#fgColor" value="ffffff" />
+        <font key="Button.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Button.sel#marUnit" value="2,2,2,2" />
+        <val key="Button.sel#margin" value="3.0,3.0,2.0,2.0" />
+        <val key="Button.sel#padUnit" value="2,2,2,2" />
+        <val key="Button.sel#padding" value="2.0,2.0,2.0,2.0" />
+        <val key="Button.sel#transparency" value="0" />
+        <val key="CenterLabel.align" value="4" />
+        <val key="CenterLabel.derive" value="Label" />
+        <val key="FloatingHint.align" value="4" />
+        <val key="FloatingHint.fgColor" value="090031" />
+        <font key="FloatingHint.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="FloatingHint.transparency" value="0" />
+        <val key="Label.fgColor" value="a2a1b8" />
+        <font key="Label.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Label.transparency" value="0" />
+        <val key="Link.fgColor" value="ffffff" />
+        <font key="Link.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Link.press#fgColor" value="fd5056" />
+        <font key="Link.press#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Link.press#transparency" value="0" />
+        <val key="Link.transparency" value="0" />
+        <val key="LinkChanger.fgColor" value="090031" />
+        <font key="LinkChanger.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="LinkChanger.press#fgColor" value="fd5056" />
+        <font key="LinkChanger.press#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="LinkChanger.press#transparency" value="0" />
+        <val key="LinkChanger.transparency" value="0" />
+        <val key="Login.bgImage" value="offer6.jpg" />
+        <val key="Login.bgType" value="33" />
+        <val key="Login.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Login.padUnit" value="0,0,2,0" />
+        <val key="Login.padding" value="0.0,3.0,0.0,0.0" />
+        <val key="Login.transparency" value="224" />
+        <val key="LogoLabel.align" value="4" />
+        <val key="LogoLabel.fgColor" value="ffffff" />
+        <font key="LogoLabel.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="3.0" />
+        <val key="LogoLabel.padUnit" value="2,0,2,0" />
+        <val key="LogoLabel.padding" value="3.0,3.0,0.0,0.0" />
+        <val key="LogoLabel.transparency" value="0" />
+        <val key="PaddedLabel.fgColor" value="090031" />
+        <font key="PaddedLabel.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="3.0" />
+        <val key="PaddedLabel.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="PaddedLabel.transparency" value="0" />
+        <val key="Picker.align" value="4" />
+        <font key="Picker.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="Picker.marUnit" value="2,0,0,0" />
+        <val key="Picker.margin" value="1.0,0.0,0.0,0.0" />
+        <val key="Picker.padUnit" value="2,2,2,2" />
+        <val key="Picker.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="PickerComponent.align" value="4" />
+        <border key="PickerComponent.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="PickerComponent.fgColor" value="090031" />
+        <font key="PickerComponent.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="PickerComponent.marUnit" value="2,2,2,2" />
+        <val key="PickerComponent.margin" value="2.0,2.0,2.0,2.0" />
+        <val key="PickerComponent.padUnit" value="2,2,2,2" />
+        <val key="PickerComponent.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="PickerComponent.transparency" value="0" />
+        <val key="PictureWhiteBackground.bgColor" value="ffffff" />
+        <val key="PictureWhiteBackground.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="PictureWhiteBackground.padUnit" value="2,2,2,2" />
+        <val key="PictureWhiteBackground.padding" value="1.0,1.0,1.0,1.0" />
+        <val key="PictureWhiteBackground.transparency" value="255" />
+        <gradient key="Profile.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Profile.bgType" value="0" />
+        <val key="Profile.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Profile.padUnit" value="0,0,2,0" />
+        <val key="Profile.padding" value="0.0,3.0,0.0,0.0" />
+        <val key="Profile.transparency" value="255" />
+        <val key="TextField.align" value="4" />
+        <border key="TextField.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="TextField.fgColor" value="090031" />
+        <val key="TextField.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TextField.padUnit" value="2,2,2,2" />
+        <val key="TextField.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="TextField.press#align" value="4" />
+        <border key="TextField.press#border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="TextField.press#fgColor" value="090031" />
+        <val key="TextField.press#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TextField.press#padUnit" value="2,2,2,2" />
+        <val key="TextField.press#padding" value="2.0,2.0,2.0,2.0" />
+        <val key="TextField.sel#align" value="4" />
+        <border key="TextField.sel#border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="TextField.sel#fgColor" value="090031" />
+        <val key="TextField.sel#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TextField.sel#padUnit" value="2,2,2,2" />
+        <val key="TextField.sel#padding" value="2.0,2.0,2.0,2.0" />
+        <val key="TextHint.align" value="4" />
+        <gradient key="Toolbar.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Toolbar.bgType" value="0" />
+        <val key="Toolbar.transparency" value="0" />
+        <val key="WhiteSeparator.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="WhiteSeparator.padding" value="1.0,1.0,1.0,1.0" />
+        <val key="WhiteSeparator.transparency" value="26" />
+        <val key="WhiteSeparator1.marUnit" value="2,2,2,2" />
+        <val key="WhiteSeparator1.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="WhiteSeparator1.padUnit" value="2,2,2,2" />
+        <val key="WhiteSeparator1.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="WhiteSeparator1.transparency" value="26" />
+    </theme>
+    <image name="twitter-logo.png"  />
+</resource>
