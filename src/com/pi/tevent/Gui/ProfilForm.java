@@ -40,7 +40,7 @@ public class ProfilForm extends BaseForm{
         Toolbar tb = new Toolbar(true);
         setToolbar(tb);
         getTitleArea().setUIID("Container");
-        //setTitle("Profile");
+        setTitle("Profile");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
         super.addSideMenu(res);
