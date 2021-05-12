@@ -13,6 +13,9 @@ import com.codename1.ui.Toolbar;
 import java.io.IOException;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.io.NetworkEvent;
+import com.pi.tevent.Gui.AddBusFrom;
+import com.pi.tevent.Gui.BusAGui;
+import com.pi.tevent.Gui.BusGui;
 import com.pi.tevent.Gui.LoginForm;
 
 /**
@@ -39,7 +42,9 @@ public class MyApplication {
             return;
         }
 
-        new LoginForm(theme).show();
+        //new LoginForm(theme).show();
+        //new AddBusFrom("Add Bus", theme).show();
+        new BusAGui("Nos Bus", theme).show();
     }
 
     public void stop() {
