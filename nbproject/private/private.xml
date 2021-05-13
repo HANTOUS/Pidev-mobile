@@ -4,13 +4,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/MaterielGui.java</file>
             <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/BusGui.java</file>
             <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/MyApplication.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Services/MaterielService.java</file>
+            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/BusAGui.java</file>
+            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/UpdateBusGui.java</file>
             <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Services/BusService.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Entities/Materiel.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Entities/Bus.java</file>
+            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/AddBusFrom.java</file>
         </group>
     </open-files>
 </project-private>

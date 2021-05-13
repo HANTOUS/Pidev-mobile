@@ -108,7 +108,7 @@ public class UpdateBusGui extends com.codename1.ui.Form {
             else{
                 bs.updateBus(b);
                 Dialog.show("Success", "Ajout avec Success", null, "ok");
-                //new BusAGui("Bus List",theme);
+                new BusAGui("Bus List",theme);
             }
         });
         this.add(btnSubmit);

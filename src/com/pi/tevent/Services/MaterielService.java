@@ -24,7 +24,8 @@ import com.pi.tevent.Entities.Materiel;
  */
 public class MaterielService {
     private ConnectionRequest req = new ConnectionRequest();
-    public ArrayList<Materiel> listBus  = new ArrayList<>();
+    public ArrayList<Materiel> listMateriel  = new ArrayList<>();
+    public boolean ResultOK;
     
     public ArrayList<Materiel> parseCategories(String jsonText) {
         ArrayList<Materiel> materiels = new ArrayList<>();
@@ -91,11 +92,68 @@ public class MaterielService {
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                listBus = parseCategories(new String(req.getResponseData()));
+                listMateriel = parseCategories(new String(req.getResponseData()));
                 req.removeResponseListener(this);
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
-        return listBus;
+        return listMateriel;
+    }
+    
+    
+    public boolean addMateriel(Materiel m){
+            
+        String url = "http://127.0.0.1:8000/ajoutmaterielmobile";
+        ConnectionRequest req = new ConnectionRequest(url);
+        req.addArgument("id", ""+m.getId());
+        req.addArgument("label", m.getLabel());
+        req.addArgument("stock", ""+m.getStock());
+            req.addArgument("qteReserve", ""+m.getQte_reserve());
+        req.addArgument("prix", ""+m.getPrix());
+        req.addArgument("dispo", ""+m.getDispo());
+        req.addResponseCodeListener(new ActionListener<NetworkEvent>(){
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                ResultOK=req.getResponseCode()==200;
+            }
+            
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return ResultOK;
+    }
+    
+    public boolean updateMateriel(Materiel m){
+        String url = "http://127.0.0.1:8000/updatematerielmobile";
+        ConnectionRequest req = new ConnectionRequest(url);
+        req.addArgument("id", ""+m.getId());
+        req.addArgument("label", m.getLabel());
+        req.addArgument("stock", ""+m.getStock());
+        req.addArgument("qteReserve", ""+m.getQte_reserve());
+        req.addArgument("prix", ""+m.getPrix());
+        req.addArgument("dispo", ""+m.getDispo());
+        req.addResponseCodeListener(new ActionListener<NetworkEvent>(){
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                ResultOK=req.getResponseCode()==200;
+            }
+            
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return ResultOK;
+    }
+    
+    public boolean deleteMateriel(String id){
+        String url = "http://127.0.0.1:8000/suppmaterielmobile";
+        ConnectionRequest req = new ConnectionRequest(url);
+        req.addArgument("id", ""+id);
+        req.addResponseCodeListener(new ActionListener<NetworkEvent>(){
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                ResultOK=req.getResponseCode()==200;
+            }
+            
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return ResultOK;
     }
 }
