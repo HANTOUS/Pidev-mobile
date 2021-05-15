@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.pi.tevent.Utils;
+package com.pi.tevent.utils;
 import com.pi.tevent.Entities.Utilisateur;
+
 /**
  *
  * @author hanto
@@ -57,8 +58,6 @@ public class SessionUser {
         }
         return SessionUser.instance;
     }
-
-
 
     public static SessionUser getInstance() {
         return instance;

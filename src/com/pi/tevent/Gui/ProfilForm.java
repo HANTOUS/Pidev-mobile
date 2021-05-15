@@ -28,7 +28,7 @@ import com.codename1.ui.Dialog;
 import com.codename1.ui.events.*;
 import java.io.IOException;
 import com.codename1.io.FileSystemStorage;
-import com.pi.tevent.Utils.SessionUser;
+import com.pi.tevent.utils.SessionUser;
 import com.pi.tevent.Entities.Utilisateur;
 import java.text.SimpleDateFormat;  
 import com.codename1.ui.spinner.Picker;

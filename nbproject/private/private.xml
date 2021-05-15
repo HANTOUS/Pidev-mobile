@@ -4,10 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Gui/RegisterForm.java</file>
-            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Gui/ProfilForm.java</file>
-            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Utils/SessionUser.java</file>
-            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Services/UtilisateurServices.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/utils/com.pi.tevent.utils</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/utils/Statics.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/MyApplication.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/utils/SessionUser.java</file>
         </group>
     </open-files>
 </project-private>
