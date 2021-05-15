@@ -5,6 +5,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeBusForm.java</file>
             <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeMaterielForm.java</file>
             <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeChauffeurForm.java</file>
@@ -16,6 +17,12 @@
             <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Services/BusService.java</file>
             <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/AddBusFrom.java</file>
 >>>>>>> 646c0f413b79a247dad73e77ac16a2d743903722
+=======
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/utils/com.pi.tevent.utils</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/utils/Statics.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/MyApplication.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/TEvent/src/com/pi/tevent/utils/SessionUser.java</file>
+>>>>>>> user
         </group>
     </open-files>
 </project-private>

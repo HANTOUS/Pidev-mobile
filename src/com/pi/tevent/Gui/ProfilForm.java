@@ -28,7 +28,10 @@ import com.codename1.ui.Dialog;
 import com.codename1.ui.events.*;
 import java.io.IOException;
 import com.codename1.io.FileSystemStorage;
-
+import com.pi.tevent.utils.SessionUser;
+import com.pi.tevent.Entities.Utilisateur;
+import java.text.SimpleDateFormat;  
+import com.codename1.ui.spinner.Picker;
 /**
  *
  * @author hanto
@@ -72,25 +75,30 @@ public class ProfilForm extends BaseForm{
                     )
                 )
         ));
-        
-        TextField nom = new TextField("Hantous");
+        //SessionUser su = new SessionUser();
+        Utilisateur user =  SessionUser.getUser();
+        TextField nom = new TextField(user.getNom());
         nom.setUIID("TextFieldBlack");
        // addStringValue("Nom", nom);
         
-        TextField prenom = new TextField("Mehdi");
+        TextField prenom = new TextField(user.getPrenom());
         prenom.setUIID("TextFieldBlack");
         //addStringValue("Prenom", prenom);
 
-        TextField email = new TextField("mehdi.hantous@esprit.tn", "E-Mail", 20, TextField.ANY);
+        TextField email = new TextField(user.getEmail(), "E-Mail", 20, TextField.ANY);
         email.setUIID("TextFieldBlack");
         //addStringValue("Email", email);
         
-        TextField cin = new TextField("09634082", "CIN", 20, TextField.EMAILADDR);
+        TextField cin = new TextField(user.getCin(), "CIN", 20, TextField.EMAILADDR);
         cin.setUIID("TextFieldBlack");
         //addStringValue("CIN", cin);
         
-        TextField DateN = new TextField("04-12-1998", "Daten Naissance", 20, TextField.ANY);
-        DateN.setUIID("TextFieldBlack");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyy");  
+        Picker dateN = new Picker();
+        dateN.setType(Display.PICKER_TYPE_DATE);
+        dateN.setDate(user.getDateNaissance());  
+        //TextField DateN = new TextField(dateN, "Daten Naissance", 20, TextField.ANY);
+        dateN.setUIID("TextFieldBlack");
         //addStringValue("Date Naissance", DateN);
         
         Container content = BoxLayout.encloseY(
@@ -102,7 +110,8 @@ public class ProfilForm extends BaseForm{
                 createLineSeparator(),
                 FlowLayout.encloseCenter(new Label("CIN", "PaddedLabel"), cin),
                 createLineSeparator(),
-                FlowLayout.encloseCenter(new Label("Date Naissance", "PaddedLabel"), DateN),
+                FlowLayout.encloseCenter(new Label("Date Naissance", "PaddedLabel")),
+                FlowLayout.encloseCenter(dateN),
                 createLineSeparator()
 
         );
@@ -110,7 +119,7 @@ public class ProfilForm extends BaseForm{
         add(BorderLayout.CENTER, content);
         
         Button mod = new Button("Modifier");
-        Button changer = new Button("Chnager photo de profile");
+        Button changer = new Button("Changer photo de profile");
         changer.addActionListener(e -> changerImage());
         changer.setUIID("LinkChanger");
         add(BorderLayout.SOUTH, BoxLayout.encloseY(
