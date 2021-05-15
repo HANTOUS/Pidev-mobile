@@ -54,7 +54,7 @@ public class DetailsDemandeMaterielForm extends BaseForm {
 
         
         
-        Image img = theme.getImage("about1.jpg");
+        Image img = theme.getImage("offer3.jpg");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
         }

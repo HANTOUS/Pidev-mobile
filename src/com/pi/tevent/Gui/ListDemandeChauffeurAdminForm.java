@@ -5,9 +5,11 @@
  */
 package com.pi.tevent.Gui;
 
+import com.codename1.components.SpanLabel;
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
+import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.Toolbar;
@@ -55,18 +57,19 @@ getTitleArea().setUIID("Container");
     
             
     public Container item(DemandeChauffeur dc){
-                            Button supprimer = new Button("Supprimer");
+                            Button supprimer = new Button(FontImage.MATERIAL_DELETE);
 
+        Container holderParent = new Container(BoxLayout.y());
         Container holder = new Container(BoxLayout.x());
         Container holder1 = new Container(BoxLayout.x());
         Container holder2 = new Container(BoxLayout.x());
         Container holder3 = new Container(BoxLayout.y());
-        Label lID = new Label(""+dc.getId()) ;
-        Label lEtat = new Label(dc.getEtat());
+        Label t1 = new Label("Numéro de permis :") ;
+        Label t2 = new Label("Date:");
         Label lNumpermis = new Label(""+dc.getNumPermis()) ;
                 lNumpermis.setUIID("NewsTopLine");
 
-        Label lDatePermis= new Label(dc.getDatePermis().toString()) ;
+        SpanLabel lDatePermis= new SpanLabel(dc.getDatePermis().toString()) ;
                 lDatePermis.setUIID("NewsTopLine");
 
         Label lDateExp= new Label(dc.getDateExpiration().toString()) ;
@@ -75,18 +78,18 @@ getTitleArea().setUIID("Container");
             new DemandeChauffeurServices().deleteDemandeChauffeur(dc);
             new ListDemandeChauffeurAdminForm(theme).show();
                     });
-         holder1.add(lNumpermis);
-         holder2.add(lDatePermis);
+         holder1.add(t1).add(lNumpermis);
+         holder2.add(t2).add(lDatePermis);
          holder3.add(holder1).add(holder2);
        //holder2.add(lDatePermis).add(lDateExp);
 //        holder.add(holder1).add(holder2).add("--------------------------------------------------------------");
-        holder.add(holder3).add(supprimer).add(createLineSeparator(000000));
+        holder.add(holder3).add(supprimer);
          lNumpermis.addPointerPressedListener(evt ->{
          new DetailsDemandeChauffeurAdminForm(theme,dc).show();
         });
        holder3.setLeadComponent(lNumpermis); // pour tout les composant de holder aient le meme comportement que lNb_particip
-       
-        return holder;
+       holderParent.add(holder).add(createLineSeparator(000000));
+        return holderParent;
     }
     
     public void addGUIs(){

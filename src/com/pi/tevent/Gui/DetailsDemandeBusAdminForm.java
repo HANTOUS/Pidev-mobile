@@ -9,6 +9,7 @@ import com.codename1.components.ImageViewer;
 import com.codename1.components.MultiButton;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
+import com.codename1.messaging.Message;
 import com.codename1.ui.Button;
 import com.codename1.ui.ButtonGroup;
 import com.codename1.ui.Command;
@@ -66,9 +67,8 @@ public class DetailsDemandeBusAdminForm extends BaseForm {
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
 
-        super.addSideMenu(theme);
 
-        Image img = theme.getImage("about1.jpg");
+        Image img = theme.getImage("destination7.jpg");
         if (img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
         }
@@ -143,9 +143,20 @@ public class DetailsDemandeBusAdminForm extends BaseForm {
         add(BorderLayout.SOUTH, BoxLayout.encloseY(
                 accepter, refuser
         ));
+        if (db.getEtat().equals("encours")) {
+            accepter.setEnabled(true);
+            refuser.setEnabled(true);
+        } else {
+            accepter.setEnabled(false);
+            refuser.setEnabled(false);
+        }
         accepter.requestFocus();
         accepter.addActionListener(e -> {
             new DemandeBusServices().accepterDemandeBus(db.getId());
+             
+            String mail=new DemandeBusServices().getemail(db.getUtilisateur());
+            Message m = new Message("Votre demande a été accepté");
+            Display.getInstance().sendMessage(new String[]{mail}, "Demande Bus", m);
             etat.setText("accepter");
             accepter.setEnabled(false);
             refuser.setEnabled(false);

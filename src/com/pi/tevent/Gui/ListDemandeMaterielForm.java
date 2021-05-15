@@ -62,6 +62,7 @@ Image img = theme.getImage("camping.png");
         sl.setUIID("BottomPad");
         sl.setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FILL);
        
+        Container holderParent1 = new Container(BoxLayout.y());
         Container holderParent = new Container(BoxLayout.x());
         Container holderChild = new Container(BoxLayout.x());
         Container holderChild1 = new Container(BoxLayout.y());
@@ -79,13 +80,13 @@ Image img = theme.getImage("camping.png");
        holder1.add(lMateriel).add(lQuantite);
        holder2.add(lDateDebut);
        holder.add(holder1).add(holder2);
-     holderParent.add(img).add(holder).add(createLineSeparator(000000));
+     holderParent.add(img).add(holder);
        lMateriel.addPointerPressedListener(evt ->{
        new DetailsDemandeMaterielForm(theme,dm).show();
        });
        holderParent.setLeadComponent(lMateriel); // pour tout les composant de holder aient le meme comportement que lNb_particip
-       
-        return holderParent;
+       holderParent1.add(holderParent).add(createLineSeparator(000000));
+        return holderParent1;
     }
     
     public void addGUIs(){

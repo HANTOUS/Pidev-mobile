@@ -10,6 +10,7 @@ import com.codename1.components.SpanLabel;
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
+import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
@@ -70,8 +71,9 @@ getTitleArea().setUIID("Container");
    
         
     public Container item(DemandeBus db) {
-                    Button supprimer = new Button("Supprimer");
+                    Button supprimer = new Button(FontImage.MATERIAL_DELETE);
 
+        Container holderParent = new Container(BoxLayout.y());
         Container holder = new Container(BoxLayout.x());
         Container holder1 = new Container(BoxLayout.y());
         Container holderNB = new Container(BoxLayout.x());
@@ -98,12 +100,13 @@ getTitleArea().setUIID("Container");
         holderVA.add(titreVille_arrivee).add(lVille_arrivee);
         //holderJL.add(titreJour_location).add(lJour_location);
          supprimer.addActionListener(evt ->{
+             
             new DemandeBusServices().deleteDemandeBus(db);
-            //new ListDemandeBusAdminForm(theme).show();
+            new ListDemandeBusAdminForm(theme).show();
              refreshTheme();
          });
 
-        holder1.add(holderNB).add(holderVD).add(holderVA).add(lUser).add(createLineSeparator(000000));
+        holder1.add(holderNB).add(holderVD).add(holderVA);
         
         
         
@@ -113,8 +116,8 @@ getTitleArea().setUIID("Container");
             new DetailsDemandeBusAdminForm(theme, db).show();
         });
         holder1.setLeadComponent(lNb_participants); // pour tout les composant de holder aient le meme comportement que lNb_particip
-
-        return holder;
+        holderParent.add(holder).add(createLineSeparator(000000));
+        return holderParent;
     }
 
     public void addGUIs() {

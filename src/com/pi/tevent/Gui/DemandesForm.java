@@ -16,7 +16,7 @@ import com.codename1.ui.util.Resources;
  *
  * @author DELL
  */
-public class HomeForm extends BaseForm{
+public class DemandesForm extends BaseForm{
     Resources theme;
     Button ListBus ;
     Button ListChauffeur ;
@@ -27,7 +27,8 @@ public class HomeForm extends BaseForm{
     Button AListBus ;
     Button AListMateriel ;
     Button AListChauff ;
-    public HomeForm(Resources theme){
+    Button Stat ;
+    public DemandesForm(Resources theme){
         super("PAGE D'ACCEUIL", BoxLayout.y());
         this.theme = theme ;
         addGUIs();
@@ -36,6 +37,7 @@ public class HomeForm extends BaseForm{
     }
 
     public void addGUIs() {
+        Stat = new Button("STAT");
         ListBus = new Button("LIST BUS");
         ListChauffeur = new Button("LIST Chauffeur");
         ListMateriel = new Button("LIST Materiel");
@@ -47,7 +49,7 @@ public class HomeForm extends BaseForm{
         AListChauff = new Button("Admin Chauffeur");
         
         
-       this.addAll(ListBus,ListChauffeur,ListMateriel,AListChauff,AListBus,AListMateriel,passerdc,passerdm,passerdb);
+       this.addAll(ListBus,ListChauffeur,ListMateriel,AListChauff,AListBus,AListMateriel,passerdc,passerdm,passerdb,Stat);
 //       this.add(passerdc,passerdm).add(passerdb);
     }
     public void addActions( ){
@@ -60,6 +62,7 @@ public class HomeForm extends BaseForm{
         passerdc.addActionListener(evt -> new AddDemandeChauffeurForm(theme).show() );
         passerdb.addActionListener(evt -> new AddDemandeBusForm(theme).show() );
         passerdm.addActionListener(evt -> new AddDemandeMaterielForm(theme).show() );
+        Stat.addActionListener(evt -> new ChartForm(theme).show() );
 
     }
 }

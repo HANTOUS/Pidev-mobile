@@ -53,7 +53,7 @@ public class DetailsDemandeChauffeurForm extends BaseForm {
         tb.addSearchCommand(e -> {});
         
         
-        Image img = theme.getImage("about1.jpg");
+        Image img = theme.getImage("destination1.jpg");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
         }

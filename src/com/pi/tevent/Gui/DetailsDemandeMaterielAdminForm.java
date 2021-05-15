@@ -6,6 +6,7 @@
 package com.pi.tevent.Gui;
 
 import com.codename1.components.ScaleImageLabel;
+import com.codename1.messaging.Message;
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
 import com.codename1.ui.Container;
@@ -25,6 +26,7 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeChauffeur;
 import com.pi.tevent.Entities.DemandeMateriel;
+import com.pi.tevent.Services.DemandeBusServices;
 import com.pi.tevent.Services.DemandeMaterielServices;
 import java.util.ArrayList;
 import java.util.Date;
@@ -60,7 +62,7 @@ public class DetailsDemandeMaterielAdminForm extends BaseForm {
         tb.addSearchCommand(e -> {
         });
 
-        Image img = theme.getImage("about1.jpg");
+        Image img = theme.getImage("offer3.jpg");
         if (img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
         }
@@ -123,6 +125,13 @@ public class DetailsDemandeMaterielAdminForm extends BaseForm {
         add(BorderLayout.SOUTH, BoxLayout.encloseY(
                 accepter, refuser
         ));
+        if (db.getEtat().equals("encours")) {
+            accepter.setEnabled(true);
+            refuser.setEnabled(true);
+        } else {
+            accepter.setEnabled(false);
+            refuser.setEnabled(false);
+        }
         accepter.requestFocus();
         accepter.addActionListener(evt -> {
                       int quantite = Integer.parseInt(qte.getText());
@@ -139,6 +148,9 @@ public class DetailsDemandeMaterielAdminForm extends BaseForm {
                 Dialog.show("Attention", "Il reste que"+reste, new Command("ok"));
 
             }
+            String mail=new DemandeBusServices().getemail(db.getUtilisateur());
+            Message m = new Message("Votre demande a été accepté");
+            Display.getInstance().sendMessage(new String[]{mail}, "Demande Matériel", m);
             
         });
         refuser.addActionListener(evt -> {
