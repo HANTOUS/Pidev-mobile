@@ -97,6 +97,9 @@
         <val key="Picker.margin" value="1.0,0.0,0.0,0.0" />
         <val key="Picker.padUnit" value="2,2,2,2" />
         <val key="Picker.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="Picker1.align" value="4" />
+        <val key="Picker1.fgColor" value="090031" />
+        <font key="Picker1.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.0" />
         <val key="PickerComponent.align" value="4" />
         <border key="PickerComponent.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
         <val key="PickerComponent.fgColor" value="090031" />

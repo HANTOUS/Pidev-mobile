@@ -4,13 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/EmailForm.java</file>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/ForgotForm.java</file>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/ProfilForm.java</file>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/ResetForm.java</file>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/BaseForm.java</file>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/LoginForm.java</file>
-            <file>file:/C:/Users/hanto/Documents/NetBeansProjects/com.pi.tevent/src/com/pi/tevent/Gui/ActiveForm.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Gui/RegisterForm.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Gui/ProfilForm.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Utils/SessionUser.java</file>
+            <file>file:/C:/Users/hanto/Desktop/Esprit/3eme/PI/com.pi.tevent/src/com/pi/tevent/Services/UtilisateurServices.java</file>
         </group>
     </open-files>
 </project-private>
