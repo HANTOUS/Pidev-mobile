@@ -84,6 +84,7 @@ getTitleArea().setUIID("Container");
         sl.setUIID("BottomPad");
         sl.setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FILL);
         
+        Container holderParent = new Container(BoxLayout.y());
         Container holder = new Container(BoxLayout.x());
         Container holder1 = new Container(BoxLayout.y());
         Container holderNB = new Container(BoxLayout.x());
@@ -118,13 +119,14 @@ getTitleArea().setUIID("Container");
         
         
 //       holder.add(lNb_participants).add(lVille_depart).add(lVille_arrivee).add(lJour_location);
-        holder.add(img).add(holder1).add(createLineSeparator(000000));
+        holder.add(img).add(holder1);
         lNb_participants.addPointerPressedListener(evt -> {
             new DetailsDemandeBusForm(theme, db).show();
+            
         });
         holder.setLeadComponent(lNb_participants); // pour tout les composant de holder aient le meme comportement que lNb_particip
-
-        return holder;
+        holderParent.add(holder).add(createLineSeparator(000000));
+        return holderParent;
     }
 
     public void addGUIs() {

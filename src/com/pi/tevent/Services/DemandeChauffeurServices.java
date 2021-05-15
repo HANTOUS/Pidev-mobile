@@ -125,7 +125,6 @@ public class DemandeChauffeurServices {
             JSONParser j = new JSONParser();
 
             Map<String, Object> DemandeChauffeurListJson = j.parseJSON(new CharArrayReader(json.toCharArray()));
-            System.out.println(DemandeChauffeurListJson);
 
             List<Map<String, Object>> list = (List<Map<String, Object>>) DemandeChauffeurListJson.get("root");
 

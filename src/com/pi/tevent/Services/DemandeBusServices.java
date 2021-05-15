@@ -33,6 +33,7 @@ public class DemandeBusServices {
     public boolean resultOK;
     public static DemandeBusServices instance;
     private ConnectionRequest req;
+    public String email ;
 
     public DemandeBusServices() {
         req = new ConnectionRequest();
@@ -128,7 +129,6 @@ public class DemandeBusServices {
             JSONParser j = new JSONParser();
 
             Map<String, Object> DemandeBusListJson = j.parseJSON(new CharArrayReader(json.toCharArray()));
-            System.out.println(DemandeBusListJson);
 
             List<Map<String, Object>> list = (List<Map<String, Object>>) DemandeBusListJson.get("root");
 
@@ -144,7 +144,6 @@ public class DemandeBusServices {
                 db.setNbParticipant((int) nb);
                 
                 Map <String, Object> utilisateur2 = (Map <String, Object>) obj.get("utilisateur");
-                System.out.println(utilisateur2);
 
                 float userId = Float.parseFloat(utilisateur2.get("id").toString());
                 
@@ -244,4 +243,46 @@ public class DemandeBusServices {
         return listDemandeBus;
     }
 
+    
+     public String parseEmail(String json) throws ParseException {
+        email="";
+        try {
+            JSONParser j = new JSONParser();
+
+            Map<String, Object> obj = j.parseJSON(new CharArrayReader(json.toCharArray()));
+
+           
+                
+                email=obj.get("email").toString();
+               
+
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return email;
+
+    }
+
+public String getemail(int id) {
+    email="";
+        String url = Statics.BASE_URL + "/getemail?id="+id;
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                DemandeBusServices dbs = new DemandeBusServices();
+
+                try {
+                    email = dbs.parseEmail(new String(req.getResponseData()));
+                } catch (ParseException ex) {
+                    System.out.println(ex.getMessage());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        System.out.println(email);
+        return email;
+    }
 }

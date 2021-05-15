@@ -306,7 +306,6 @@ public String getLabel(int id) {
                 
                Stock.add(stock);
                Stock.add(qte_reserve);
-                    System.out.println(Stock);
 
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -327,7 +326,6 @@ public String getLabel(int id) {
 
                 try {
                     Stock = dbs.parseStockMateriel(new String(req.getResponseData()));
-                    System.out.println(Stock);
                 } catch (ParseException ex) {
                     System.out.println(ex.getMessage());
                 }

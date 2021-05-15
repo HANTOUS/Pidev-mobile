@@ -25,6 +25,7 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeChauffeur;
+import com.pi.tevent.Services.DemandeBusServices;
 import com.pi.tevent.Services.DemandeChauffeurServices;
 import java.util.Date;
 
@@ -35,7 +36,7 @@ import java.util.Date;
 public class DetailsDemandeChauffeurAdminForm extends BaseForm {
 
     Resources theme;
-
+    String mail ;
     public DetailsDemandeChauffeurAdminForm(Resources theme, DemandeChauffeur db) {
         super("Gérer Demande", new BorderLayout());
         this.theme = theme;
@@ -54,7 +55,7 @@ public class DetailsDemandeChauffeurAdminForm extends BaseForm {
         tb.addSearchCommand(e -> {
         });
 
-        Image img = theme.getImage("about1.jpg");
+        Image img = theme.getImage("destination1.jpg");
         if (img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
         }
@@ -123,9 +124,11 @@ public class DetailsDemandeChauffeurAdminForm extends BaseForm {
         });
         accepter.addActionListener(e -> {
             new DemandeChauffeurServices().accepterDemandeChauffeur(db);
+
             etat.setText("accepter");
-            Message m = new Message("Body of message");
-            Display.getInstance().sendMessage(new String[]{"tarek.bellalouna@gmail.com"}, "Subject of message", m);
+            mail=new DemandeBusServices().getemail(db.getUtilisateur());
+            Message m = new Message("Votre demande a été accepté");
+            Display.getInstance().sendMessage(new String[]{mail}, "Demande Chauffeur", m);
             accepter.setEnabled(false);
             refuser.setEnabled(false);
         });
