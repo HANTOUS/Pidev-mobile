@@ -4,9 +4,13 @@
     <image name="about1.jpg"  />
     <image name="activation-background.jpg"  />
     <image name="banner1.png"  />
+<<<<<<< HEAD
     <image name="bus.png"  />
     <image name="camping.png"  />
     <image name="chauffeur.png"  />
+=======
+    <image name="booking.jpg"  />
+>>>>>>> 646c0f413b79a247dad73e77ac16a2d743903722
     <image name="confirmation-background.jpg"  />
     <image name="facebook-logo.png"  />
     <image name="Logo-Off.png"  />
