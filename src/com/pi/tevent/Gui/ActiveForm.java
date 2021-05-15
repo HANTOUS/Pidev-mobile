@@ -24,9 +24,9 @@ import com.codename1.ui.util.Resources;
  *
  * @author hanto
  */
-public class ActiveForm extends BaseForm{
+public class ActiveForm extends BaseForm {
     
-
+ 
     public ActiveForm(Resources res) {
         super(new BorderLayout());
         Toolbar tb = new Toolbar(true);

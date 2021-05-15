@@ -4,11 +4,25 @@
     <image name="about1.jpg"  />
     <image name="activation-background.jpg"  />
     <image name="banner1.png"  />
+<<<<<<< HEAD
+    <image name="bus.png"  />
+    <image name="camping.png"  />
+    <image name="chauffeur.png"  />
+=======
+    <image name="booking.jpg"  />
+>>>>>>> 646c0f413b79a247dad73e77ac16a2d743903722
     <image name="confirmation-background.jpg"  />
+    <image name="destination1.jpg"  />
+    <image name="destination10.jpg"  />
+    <image name="destination12.jpg"  />
+    <image name="destination3.jpg"  />
+    <image name="destination7.jpg"  />
     <image name="facebook-logo.png"  />
     <image name="Logo-Off.png"  />
+    <image name="offer3.jpg"  />
     <image name="offer6.jpg"  />
     <image name="pdp.jpg"  />
+    <image name="privacy.jpg"  />
     <image name="profile-background.jpg"  />
     <image name="profile-pic.jpg"  />
     <image name="profile.jpg"  />
@@ -56,6 +70,11 @@
         <val key="Button.sel#transparency" value="0" />
         <val key="CenterLabel.align" value="4" />
         <val key="CenterLabel.derive" value="Label" />
+        <val key="ComboBox.align" value="4" />
+        <border key="ComboBox.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <font key="ComboBox.font" type="ttf" face="0" style="0" size="8" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="5.0" />
+        <val key="ComboBox.padUnit" value="2,2,2,2" />
+        <val key="ComboBox.padding" value="0.0,0.0,0.0,0.0" />
         <val key="FloatingHint.align" value="4" />
         <val key="FloatingHint.fgColor" value="090031" />
         <font key="FloatingHint.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
@@ -148,5 +167,6 @@
         <val key="WhiteSeparator1.padding" value="2.0,2.0,2.0,2.0" />
         <val key="WhiteSeparator1.transparency" value="26" />
     </theme>
+    <image name="tour.jpg"  />
     <image name="twitter-logo.png"  />
 </resource>
