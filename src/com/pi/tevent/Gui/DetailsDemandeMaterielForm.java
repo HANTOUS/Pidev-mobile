@@ -68,8 +68,8 @@ public class DetailsDemandeMaterielForm extends BaseForm {
                             new Label(),
 //                            FlowLayout.encloseCenter(
 //                                new Label(theme.getImage("pdp.jpg"), "PictureWhiteBackground")),
-                           new Label()
-                    )
+                           new Label()               )
+                        
                 )
         ));
         //addGUIs(db);
