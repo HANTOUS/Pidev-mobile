@@ -22,10 +22,12 @@ import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeBus;
 import com.pi.tevent.Entities.DemandeChauffeur;
+import com.pi.tevent.Entities.Utilisateur;
 import java.util.Date;
 import com.pi.tevent.Gui.AddDemandeBusForm;
 import com.pi.tevent.Services.DemandeBusServices;
 import com.pi.tevent.Services.DemandeChauffeurServices;
+import com.pi.tevent.utils.SessionUser;
 
 /**
  *
@@ -43,9 +45,10 @@ public class AddDemandeChauffeurForm extends BaseForm {
     Label lNumPermis = new Label("Date de permis");
     Label lDateExpiration = new Label("Date d'expiration");
     Resources theme;
-
+    Utilisateur user ;
     public AddDemandeChauffeurForm(Resources theme) {
         super("Demande Chauffeur", BoxLayout.y());
+                             user =  SessionUser.getUser();
         this.theme = theme;
         Toolbar tb = new Toolbar(true);
         setToolbar(tb);
@@ -87,7 +90,7 @@ public class AddDemandeChauffeurForm extends BaseForm {
             if (isValidate()) {
                 try {
 
-                    DemandeChauffeur db = new DemandeChauffeur(1, Integer.parseInt(numPermis.getText()), datePermis.getDate(), dateExpiration.getDate(), "encours");
+                    DemandeChauffeur db = new DemandeChauffeur(user.getId(), Integer.parseInt(numPermis.getText()), datePermis.getDate(), dateExpiration.getDate(), "encours");
                     if (new DemandeChauffeurServices().addDemandeChauffeur(db)) {
                         Dialog.show("Succés", "Demande Ajoutée ", new Command("ok"));
                         new ListDemandeChauffeurForm(theme).show();

@@ -22,7 +22,9 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeBus;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeBusServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -35,9 +37,11 @@ public class ListDemandeBusForm extends BaseForm {
     Form current;
     public Resources theme;
     ArrayList<DemandeBus> list;
-    
+Utilisateur user ;
     public ListDemandeBusForm(Resources theme) {
         super( "Liste Demande bus",BoxLayout.y());
+                             user =  SessionUser.getUser();
+
                 this.theme = theme;
                 Toolbar tb = new Toolbar(true);
             setToolbar(tb);
@@ -61,7 +65,7 @@ getTitleArea().setUIID("Container");
         //sl.setUIID("BottomPad");
         sl.setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FILL);
         
-        list = DemandeBusServices.getInstance().getDemandeBusByUser(1);
+        list = DemandeBusServices.getInstance().getDemandeBusByUser(user.getId());
         
         current = this;
 //        addGUIs();

@@ -22,8 +22,10 @@ import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeChauffeur;
 import com.pi.tevent.Entities.DemandeMateriel;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeChauffeurServices;
 import com.pi.tevent.Services.DemandeMaterielServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -49,12 +51,14 @@ public class AddDemandeMaterielForm extends BaseForm {
     Resources theme;
     ComboBox<Map<String, Object>> combo;
     Button b = new Button("GEEEEEEET");
+    Utilisateur user ;
 ArrayList<Integer> Stockage ;
     int reste;
         DemandeMaterielServices dms = new DemandeMaterielServices();
 
     public AddDemandeMaterielForm(Resources theme) {
         super("Demande Matériel", BoxLayout.y());
+                             user =  SessionUser.getUser();
         this.theme = theme;
         Toolbar tb = new Toolbar(true);
         setToolbar(tb);
@@ -116,7 +120,7 @@ ArrayList<Integer> Stockage ;
         reste=Stockage.get(0)-Stockage.get(1);
                 try {
                     
-                    DemandeMateriel db = new DemandeMateriel(1, combo.getSelectedIndex() + 1, quantite.getText(), "encours", dateDebut.getDate(), dateFin.getDate());
+                    DemandeMateriel db = new DemandeMateriel(user.getId(), combo.getSelectedIndex() + 1, quantite.getText(), "encours", dateDebut.getDate(), dateFin.getDate());
                       int qte=Integer.parseInt(quantite.getText());
 
             if(qte<reste){
