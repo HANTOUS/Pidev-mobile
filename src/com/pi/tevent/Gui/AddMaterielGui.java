@@ -115,7 +115,7 @@ public class AddMaterielGui extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
-////////////////-- DON'T EDIT BELOW THIS LINE!!!
+//////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
