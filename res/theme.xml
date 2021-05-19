@@ -7,6 +7,7 @@
     <image name="bus.png"  />
     <image name="camping.png"  />
     <image name="chauffeur.png"  />
+    <image name="claim.jpg"  />
     <image name="confirmation-background.jpg"  />
     <image name="destination1.jpg"  />
     <image name="destination10.jpg"  />
@@ -22,6 +23,7 @@
     <image name="profile-background.jpg"  />
     <image name="profile-pic.jpg"  />
     <image name="profile.jpg"  />
+    <image name="round.png"  />
     <image name="signin-background.jpg"  />
     <image name="signup-background.jpg"  />
     <theme name="Theme">

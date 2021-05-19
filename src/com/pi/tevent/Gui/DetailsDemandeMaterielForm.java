@@ -25,8 +25,9 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeChauffeur;
 import com.pi.tevent.Entities.DemandeMateriel;
-import com.pi.tevent.Services.DemandeChauffeurServices;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeMaterielServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.Date;
 
 /**
@@ -36,10 +37,11 @@ import java.util.Date;
 public class DetailsDemandeMaterielForm extends BaseForm {
     Resources theme ;   
     DemandeMaterielServices dms = new DemandeMaterielServices();
-
+    Utilisateur user ;
     public DetailsDemandeMaterielForm(Resources theme, DemandeMateriel db){
                 super("Detaille Du demande",new BorderLayout());
-        this.theme =theme ;
+                             user =  SessionUser.getUser();
+this.theme =theme ;
 //         addGUIs(dc);
 //        addActions();
         
@@ -68,8 +70,8 @@ public class DetailsDemandeMaterielForm extends BaseForm {
                             new Label(),
 //                            FlowLayout.encloseCenter(
 //                                new Label(theme.getImage("pdp.jpg"), "PictureWhiteBackground")),
-                           new Label()
-                    )
+                           new Label()               )
+                        
                 )
         ));
         //addGUIs(db);
@@ -120,7 +122,7 @@ public class DetailsDemandeMaterielForm extends BaseForm {
                           
                 
                         DemandeMateriel dMateriel;
-                        dMateriel = new DemandeMateriel(uDB.getId(),1,Integer.parseInt(materiel.getText()),qte.getText(),etat.getText(),new Date(),new Date());
+                        dMateriel = new DemandeMateriel(uDB.getId(),user.getId(),Integer.parseInt(materiel.getText()),qte.getText(),etat.getText(),new Date(),new Date());
                         if(new DemandeMaterielServices().updateDemandeMateriel(dMateriel)){
                             new DetailsDemandeMaterielForm(theme, dMateriel);
                               Dialog.show("Succés","Demande Modifié ", new Command("ok"));

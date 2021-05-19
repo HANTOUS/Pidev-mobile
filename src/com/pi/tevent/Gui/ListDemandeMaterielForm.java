@@ -5,22 +5,20 @@
  */
 package com.pi.tevent.Gui;
 
-import com.codename1.components.ImageViewer;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
-import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.Toolbar;
-import com.codename1.ui.geom.Dimension;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeMateriel;
-import com.pi.tevent.Services.DemandeChauffeurServices;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeMaterielServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.ArrayList;
 
 /**
@@ -31,9 +29,11 @@ public class ListDemandeMaterielForm  extends BaseForm{
     public Resources theme ; 
             ArrayList<DemandeMateriel> list;
                 DemandeMaterielServices dms = new DemandeMaterielServices();
-
+                Utilisateur user ;
     public ListDemandeMaterielForm(Resources theme){
         super("List Demande Materiel",BoxLayout.y());
+                             user =  SessionUser.getUser();
+
          Toolbar tb = new Toolbar(true);
             setToolbar(tb);
             Form previous = Display.getInstance().getCurrent();
@@ -46,7 +46,7 @@ getTitleArea().setUIID("Container");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
         this.theme = theme ; 
-                        list = DemandeMaterielServices.getInstance().getDemandeMaterielByUser(1);
+                        list = DemandeMaterielServices.getInstance().getDemandeMaterielByUser(user.getId());
 
         addGUIs();
 //                        this.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, evt -> previous.showBack());
