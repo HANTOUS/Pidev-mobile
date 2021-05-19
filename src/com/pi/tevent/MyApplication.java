@@ -34,6 +34,8 @@ import com.pi.tevent.Gui.AddFeedbackForm;
 import com.pi.tevent.Gui.AddReclamationForm;
 import com.pi.tevent.Gui.HomeFeedbackForm;
 import com.pi.tevent.Gui.HomeReclamationForm;
+import com.pi.tevent.Gui.ListDemandeBusForm;
+import com.pi.tevent.Gui.ListReclamationForm;
 import com.pi.tevent.Gui.LoginForm;
 import com.pi.tevent.Gui.RegisterForm;
 
@@ -61,7 +63,7 @@ public class MyApplication   {
             return;
         }
 
-//           new AddDemandeBusForm(theme).show();
+       //   new AddDemandeBusForm(theme).show();
        // new AddDemandeChauffeurForm(theme).show();
 //        new AddDemandeMaterielForm(theme).show();
 // new ListDemandeBusForm(theme).show();
@@ -74,12 +76,13 @@ public class MyApplication   {
 //new DemandesForm(theme).show();
 //new ChartForm(theme).show();
 
- new LoginForm(theme).show();
+ //new LoginForm(theme).show();
 //    new LISTESSAYAGE(theme).show();
         //new LoginForm(theme).show();
         //new AddBusFrom("Add Bus", theme).show();
 //        new MaterielAGui("Nos Materiel", theme).show();
-       // new AddFeedbackForm(theme).show();
+      
+       new AddFeedbackForm(theme).show();
     }
 
     public void stop() {

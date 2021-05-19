@@ -143,10 +143,10 @@ public class FeedbackServices {
         return listFeedback;
     }
     
-     public void deleteFeedback (int id) {
+     public void deleteFeedback (Feedback f) {
         ConnectionRequest con = new ConnectionRequest();
       //  "http://localhost/pi-dev/web/app_dev.php/forum/supprimerComMobile?idCom=" + id;
-        String Url = Statics.BASE_URL+"/deleteFeedback?id=" + id;
+        String Url = Statics.BASE_URL+"/deleteFeedbackMobile?id=" + f.getId();
         con.setUrl(Url);
         con.addResponseListener((e) -> {
             String str = new String(con.getResponseData());
