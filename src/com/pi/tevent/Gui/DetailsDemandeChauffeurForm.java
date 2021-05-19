@@ -23,10 +23,10 @@ import com.codename1.ui.layouts.GridLayout;
 import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
-import com.pi.tevent.Entities.DemandeBus;
 import com.pi.tevent.Entities.DemandeChauffeur;
-import com.pi.tevent.Services.DemandeBusServices;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeChauffeurServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.Date;
 
 /**
@@ -35,9 +35,11 @@ import java.util.Date;
  */
 public class DetailsDemandeChauffeurForm extends BaseForm {
     Resources theme ;
+    Utilisateur user ;
     public DetailsDemandeChauffeurForm(Resources theme, DemandeChauffeur db){
                 super("Detaille Du demande",new BorderLayout());
-        this.theme =theme ;
+                             user =  SessionUser.getUser();
+    this.theme =theme ;
 //         addGUIs(dc);
 //        addActions();
         
@@ -115,7 +117,7 @@ public class DetailsDemandeChauffeurForm extends BaseForm {
                           
                 
                         DemandeChauffeur dChauffeur;
-                        dChauffeur = new DemandeChauffeur(uDB.getId(),1,Integer.parseInt(num_permis.getText()),new Date(),new Date(),"encours");
+                        dChauffeur = new DemandeChauffeur(uDB.getId(),user.getId(),Integer.parseInt(num_permis.getText()),new Date(),new Date(),"encours");
                         if(new DemandeChauffeurServices().updateDemandeChauffeur(dChauffeur)){
                             new DetailsDemandeChauffeurForm(theme, dChauffeur);
                               Dialog.show("Succés","Demande Modifié ", new Command("ok"));

@@ -14,15 +14,16 @@ import com.codename1.charts.views.PieChart;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.Toolbar;
-import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeBus;
 import com.pi.tevent.Entities.DemandeChauffeur;
 import com.pi.tevent.Entities.DemandeMateriel;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeBusServices;
 import com.pi.tevent.Services.DemandeChauffeurServices;
 import com.pi.tevent.Services.DemandeMaterielServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.ArrayList;
 
 /**
@@ -34,10 +35,11 @@ public class ChartForm extends BaseForm{
     DemandeBusServices dbs = new DemandeBusServices();
     DemandeMaterielServices dms = new DemandeMaterielServices();
     DemandeChauffeurServices dcs = new DemandeChauffeurServices();
-    
-                ArrayList<DemandeMateriel> listMat = DemandeMaterielServices.getInstance().getAllDemandeMateriel();
-                ArrayList<DemandeBus> listBus = dbs.getAllDemandeBus();
-                ArrayList<DemandeChauffeur> listChauff = dcs.getAllDemandeChauffeur();
+    Utilisateur user ;
+
+                ArrayList<DemandeMateriel> listMat = DemandeMaterielServices.getInstance().getDemandeMaterielByUser(user.getId());
+                ArrayList<DemandeBus> listBus = dbs.getDemandeBusByUser(user.getId());
+                ArrayList<DemandeChauffeur> listChauff = dcs.getDemandeChauffeurByUser(user.getId());
                 
                 
                 double nbMat ;
@@ -83,6 +85,8 @@ public ChartForm(Resources theme) {
     
     super("TITLE", BoxLayout.yCenter());
     this.theme=theme ;
+    user =  SessionUser.getUser();
+
     Toolbar tb = new Toolbar(true);
             setToolbar(tb);
             Form previous = Display.getInstance().getCurrent();

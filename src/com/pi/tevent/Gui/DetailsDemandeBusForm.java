@@ -8,7 +8,6 @@ package com.pi.tevent.Gui;
 import com.codename1.components.ImageViewer;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.ui.Button;
-import com.codename1.ui.Command;
 import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
@@ -17,8 +16,6 @@ import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
-import com.codename1.ui.events.ActionEvent;
-import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
@@ -27,8 +24,9 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeBus;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeBusServices;
-import java.text.SimpleDateFormat;
+import com.pi.tevent.utils.SessionUser;
 import java.util.Date;
 
 /**
@@ -47,11 +45,13 @@ public class DetailsDemandeBusForm extends BaseForm{
         private TextField lJour_location ;
         private TextField lEtat ;
         private Resources theme;
+        Utilisateur user ;
         
       
     public DetailsDemandeBusForm(Resources theme ,DemandeBus db){
         super("Detaille Du demande",new BorderLayout());
-       Toolbar tb = new Toolbar(true);
+                            user =  SessionUser.getUser();
+Toolbar tb = new Toolbar(true);
             setToolbar(tb);
             Form previous = Display.getInstance().getCurrent();
         tb.setBackCommand("", e -> previous.showBack());
@@ -148,7 +148,7 @@ public class DetailsDemandeBusForm extends BaseForm{
                         int hd= Integer.parseInt(heure_depart.getText())/60;
                         int ha= Integer.parseInt(heure_arrivee.getText())/60;
                         DemandeBus dbus;
-                        dbus = new DemandeBus(uDB.getId(),1,Integer.parseInt(nb_participant.getText()),ville_depart.getText(),ville_arrivee.getText(),heure_depart.getText(),heure_arrivee.getText(),"encours",new Date());
+                        dbus = new DemandeBus(uDB.getId(),user.getId(),Integer.parseInt(nb_participant.getText()),ville_depart.getText(),ville_arrivee.getText(),heure_depart.getText(),heure_arrivee.getText(),"encours",new Date());
                         if(new DemandeBusServices().updateDemandeBus(dbus)){
                             new DetailsDemandeBusForm(theme, dbus).show();}
                 // fs.modifierProfile(user.getId(), email.getText(), num.getText());

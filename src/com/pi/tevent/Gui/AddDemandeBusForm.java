@@ -5,29 +5,23 @@
  */
 package com.pi.tevent.Gui;
 
-import com.codename1.components.FloatingHint;
-import com.codename1.components.ScaleImageLabel;
 import com.codename1.l10n.SimpleDateFormat;
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
-import com.codename1.ui.Component;
 import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
-import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
-import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
-import com.codename1.ui.layouts.FlowLayout;
-import com.codename1.ui.layouts.LayeredLayout;
-import com.codename1.ui.plaf.Style;
 import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeBus;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeBusServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.Date;
 
 /**
@@ -39,7 +33,7 @@ public class AddDemandeBusForm extends BaseForm {
 
     Resources theme;
     Container holder = new Container(BoxLayout.x());
-
+    Utilisateur user ;
     Label lNb_participants = new Label("Nombre de participants");
     Label lVille_depart= new Label("Ville de Depart");
     Label lVille_arrivee= new Label("Ville d'arrivée");
@@ -57,6 +51,8 @@ public class AddDemandeBusForm extends BaseForm {
 
     public AddDemandeBusForm(Resources theme) {
         super("Demande Bus", BoxLayout.y());
+                             user =  SessionUser.getUser();
+
         this.theme = theme;
         
         Toolbar tb = new Toolbar(true);
@@ -122,7 +118,7 @@ public class AddDemandeBusForm extends BaseForm {
                 try {
                     int hd = Integer.parseInt(heureDepart.getValue().toString()) / 60;
                     int ha = Integer.parseInt(heureArrivee.getValue().toString()) / 60;
-                    DemandeBus db = new DemandeBus(1, Integer.parseInt(tfNb_participants.getText()), villeDepart.getValue().toString(), villeArrivee.getValue().toString(), "" + hd, ha + "", "encours", jourLocation.getDate());
+                    DemandeBus db = new DemandeBus(user.getId(), Integer.parseInt(tfNb_participants.getText()), villeDepart.getValue().toString(), villeArrivee.getValue().toString(), "" + hd, ha + "", "encours", jourLocation.getDate());
                     if (new DemandeBusServices().addDemandeBus(db)) {
                         Dialog.show("Succés", "Demande Ajoutée ", new Command("ok"));
                         new ListDemandeBusForm(theme).show();
