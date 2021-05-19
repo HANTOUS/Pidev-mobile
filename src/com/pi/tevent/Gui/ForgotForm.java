@@ -16,14 +16,15 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
-
+import com.pi.tevent.Services.UtilisateurServices;
+import com.codename1.ui.Dialog;
 /**
  *
  * @author hanto
  */
 public class ForgotForm extends BaseForm{
 
-    public ForgotForm(Resources res){
+    public ForgotForm(Resources res,TextField token){
          super(new BorderLayout());
         
         if(!Display.getInstance().isTablet()) {
@@ -54,7 +55,16 @@ public class ForgotForm extends BaseForm{
         content.setScrollableY(true);
         add(BorderLayout.SOUTH, content);
         valid.requestFocus();
-        valid.addActionListener(e -> new LoginForm(res).show());
+        valid.addActionListener(e -> {
+            if (pwd.getText().isEmpty()) {
+               Dialog.show("Vérifiez Vos Champs", "!!!  Vous devez entrer votre mot de passe !!!", null, "ok");
+            } else if (! pwd.getText().equals(pwd1.getText())) {
+                Dialog.show("Vérifiez Vos Champs", "!!!  Vous devez entrer le meme mot de passe !!!", null, "ok");
+            }
+            else{
+            UtilisateurServices us = new UtilisateurServices();
+            us.getInstance().resetpass(token,pwd,res);}
+        });
 }
 
 }

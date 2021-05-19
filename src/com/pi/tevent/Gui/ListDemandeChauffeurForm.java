@@ -17,7 +17,9 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.DemandeChauffeur;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.DemandeChauffeurServices;
+import com.pi.tevent.utils.SessionUser;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,10 +31,11 @@ public class ListDemandeChauffeurForm extends BaseForm {
     public Resources theme ; 
         ArrayList<DemandeChauffeur> list;
 Form current;
-
+Utilisateur user;
     public ListDemandeChauffeurForm(Resources theme){
         super("List Demande Chauffeur",BoxLayout.y());
-         Toolbar tb = new Toolbar(true);
+                 user =  SessionUser.getUser();
+        Toolbar tb = new Toolbar(true);
             setToolbar(tb);
             Form previous = Display.getInstance().getCurrent();
         tb.setBackCommand("", e -> previous.showBack());
@@ -44,7 +47,7 @@ getTitleArea().setUIID("Container");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
         this.theme = theme ; 
-                list = DemandeChauffeurServices.getInstance().getDemandeChauffeurByUser(1);
+                list = DemandeChauffeurServices.getInstance().getDemandeChauffeurByUser(user.getId());
 
         addGUIs();
 //                        this.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, evt -> previous.showBack());

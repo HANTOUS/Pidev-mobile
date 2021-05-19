@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+            <file>file:/C:/Salim/PiMOBILE/Pidev-mobile/src/com/pi/tevent/MyApplication.java</file>
+            <file>file:/C:/Salim/PiMOBILE/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeBusForm.java</file>
+            <file>file:/C:/Salim/PiMOBILE/Pidev-mobile/src/com/pi/tevent/Gui/ListReclamationForm.java</file>
+            <file>file:/C:/Salim/PiMOBILE/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeMaterielForm.java</file>
+            <file>file:/C:/Salim/PiMOBILE/Pidev-mobile/src/com/pi/tevent/Services/ReclamationServices.java</file>
+=======
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DetailsDemandeChauffeurForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeChauffeurForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeBusForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DemandesForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ProfilForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DetailsDemandeMaterielForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeChauffeurForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ChartForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeMaterielForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DemandesAdminForm.java</file>
             <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeBusForm.java</file>
             <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeMaterielForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeChauffeurForm.java</file>
-=======
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/BusGui.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/MyApplication.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/BusAGui.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/UpdateBusGui.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Services/BusService.java</file>
-            <file>file:/C:/Users/al199/Downloads/2%20eme%20Semetre/PIDEV/Mobile/Pidev-mobile/src/com/pi/tevent/Gui/AddBusFrom.java</file>
->>>>>>> 646c0f413b79a247dad73e77ac16a2d743903722
+            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DetailsDemandeBusForm.java</file>
+>>>>>>> 49ce8c8dd05af6a93d53edb31dbd338e3a33f863
         </group>
     </open-files>
 </project-private>

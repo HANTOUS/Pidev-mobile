@@ -7,7 +7,7 @@
 package com.pi.tevent.Gui;
 
 import com.codename1.components.FloatingHint;
-import com.codename1.components.SpanLabel;
+
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
@@ -24,6 +24,8 @@ import com.codename1.ui.events.*;
 import java.io.IOException;
 import com.codename1.components.InteractionDialog;
 import com.codename1.components.SpanLabel;
+import com.pi.tevent.Services.UtilisateurServices;
+import com.codename1.ui.Dialog;
 
 /**
  *
@@ -72,37 +74,15 @@ public class EmailForm extends BaseForm{
         add(BorderLayout.SOUTH, content);
         envoyer.requestFocus();
         envoyer.addActionListener(e -> {
-            InteractionDialog nameDialog = new InteractionDialog();
-            nameDialog.setLayout(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER));
-
-            // Hint for the user
-            SpanLabel hintLabel = new SpanLabel("Indiquer le code");
-            hintLabel.setTextUIID("PaddedLabel");
-
-            TextField code = new TextField(
-                    //chosenAlarm.name.get() == null ? "Ma destination préférée" : chosenAlarm.name.get()
-            );
-           // nameTf.setUIID(textFieldStyleName);
-           // System.err.println("The textfield colour is " + nameTf.getUnselectedStyle().getFgColor());
-
-            // Validate text button
-            Button valid = new Button("Valider");
-            Button annuler = new Button("Annuler");
-            //validateNameButton.setUIID("ValidateButton");
-            Container nameButtons = BoxLayout.encloseX(valid,annuler);
-
-            valid.addActionListener((ex) -> new ForgotForm(res).show());
-            
-            annuler.addActionListener((ex1) -> new EmailForm(res).show());
-          
-            nameDialog.addComponent(BorderLayout.CENTER, code);
-            nameDialog.addComponent(BorderLayout.NORTH, BoxLayout.encloseY(createLineSeparator(),hintLabel));
-            // The buttons will be centered
-            nameDialog.addComponent(BorderLayout.SOUTH, BorderLayout.centerCenter(nameButtons));
-
-            // Shows the dialog in the center of the screen   
-            nameDialog.showPopupDialog(envoyer);
-            });
+            if (mail.getText().isEmpty()) {
+                Dialog.show("Vérifiez Vos Champs", "!!!  Vous devez entrer votre email !!!", null, "ok");
+            }
+            else{
+                System.out.println("emailform");
+                UtilisateurServices us = new UtilisateurServices();
+                us.getInstance().envoyerMail( mail,res,envoyer);
+            }
+        });
     }
     
 }

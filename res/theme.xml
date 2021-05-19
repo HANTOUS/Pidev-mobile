@@ -4,13 +4,10 @@
     <image name="about1.jpg"  />
     <image name="activation-background.jpg"  />
     <image name="banner1.png"  />
-<<<<<<< HEAD
     <image name="bus.png"  />
     <image name="camping.png"  />
     <image name="chauffeur.png"  />
-=======
-    <image name="booking.jpg"  />
->>>>>>> 646c0f413b79a247dad73e77ac16a2d743903722
+    <image name="claim.jpg"  />
     <image name="confirmation-background.jpg"  />
     <image name="destination1.jpg"  />
     <image name="destination10.jpg"  />
@@ -26,6 +23,7 @@
     <image name="profile-background.jpg"  />
     <image name="profile-pic.jpg"  />
     <image name="profile.jpg"  />
+    <image name="round.png"  />
     <image name="signin-background.jpg"  />
     <image name="signup-background.jpg"  />
     <theme name="Theme">
@@ -37,7 +35,7 @@
         <val key="Activate.padding" value="0.0,3.0,0.0,0.0" />
         <val key="Activate.transparency" value="255" />
         <val key="BottomPad.align" value="4" />
-        <val key="BottomPad.fgColor" value="090031" />
+        <val key="BottomPad.fgColor" value="90031" />
         <font key="BottomPad.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.0" />
         <val key="BottomPad.margin" value="0.0,0.0,0.0,0.0" />
         <val key="BottomPad.padding" value="0.0,0.0,0.0,0.0" />
@@ -76,7 +74,7 @@
         <val key="ComboBox.padUnit" value="2,2,2,2" />
         <val key="ComboBox.padding" value="0.0,0.0,0.0,0.0" />
         <val key="FloatingHint.align" value="4" />
-        <val key="FloatingHint.fgColor" value="090031" />
+        <val key="FloatingHint.fgColor" value="90031" />
         <font key="FloatingHint.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
         <val key="FloatingHint.transparency" value="0" />
         <val key="Label.fgColor" value="a2a1b8" />
@@ -88,7 +86,7 @@
         <font key="Link.press#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
         <val key="Link.press#transparency" value="0" />
         <val key="Link.transparency" value="0" />
-        <val key="LinkChanger.fgColor" value="090031" />
+        <val key="LinkChanger.fgColor" value="90031" />
         <font key="LinkChanger.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
         <val key="LinkChanger.press#fgColor" value="fd5056" />
         <font key="LinkChanger.press#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
@@ -106,7 +104,7 @@
         <val key="LogoLabel.padUnit" value="2,0,2,0" />
         <val key="LogoLabel.padding" value="3.0,3.0,0.0,0.0" />
         <val key="LogoLabel.transparency" value="0" />
-        <val key="PaddedLabel.fgColor" value="090031" />
+        <val key="PaddedLabel.fgColor" value="90031" />
         <font key="PaddedLabel.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="3.0" />
         <val key="PaddedLabel.padding" value="2.0,2.0,2.0,2.0" />
         <val key="PaddedLabel.transparency" value="0" />
@@ -118,7 +116,7 @@
         <val key="Picker.padding" value="2.0,2.0,2.0,2.0" />
         <val key="PickerComponent.align" value="4" />
         <border key="PickerComponent.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
-        <val key="PickerComponent.fgColor" value="090031" />
+        <val key="PickerComponent.fgColor" value="90031" />
         <font key="PickerComponent.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
         <val key="PickerComponent.marUnit" value="2,2,2,2" />
         <val key="PickerComponent.margin" value="2.0,2.0,2.0,2.0" />
@@ -138,19 +136,19 @@
         <val key="Profile.transparency" value="255" />
         <val key="TextField.align" value="4" />
         <border key="TextField.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
-        <val key="TextField.fgColor" value="090031" />
+        <val key="TextField.fgColor" value="90031" />
         <val key="TextField.margin" value="0.0,0.0,0.0,0.0" />
         <val key="TextField.padUnit" value="2,2,2,2" />
         <val key="TextField.padding" value="2.0,2.0,2.0,2.0" />
         <val key="TextField.press#align" value="4" />
         <border key="TextField.press#border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
-        <val key="TextField.press#fgColor" value="090031" />
+        <val key="TextField.press#fgColor" value="90031" />
         <val key="TextField.press#margin" value="0.0,0.0,0.0,0.0" />
         <val key="TextField.press#padUnit" value="2,2,2,2" />
         <val key="TextField.press#padding" value="2.0,2.0,2.0,2.0" />
         <val key="TextField.sel#align" value="4" />
         <border key="TextField.sel#border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="0" strokeOpacity="255" strokeThickness="0.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
-        <val key="TextField.sel#fgColor" value="090031" />
+        <val key="TextField.sel#fgColor" value="90031" />
         <val key="TextField.sel#margin" value="0.0,0.0,0.0,0.0" />
         <val key="TextField.sel#padUnit" value="2,2,2,2" />
         <val key="TextField.sel#padding" value="2.0,2.0,2.0,2.0" />

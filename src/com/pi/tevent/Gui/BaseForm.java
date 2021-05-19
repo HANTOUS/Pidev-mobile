@@ -84,7 +84,7 @@ public class BaseForm extends Form {
         tb.addMaterialCommandToSideMenu("Bus", FontImage.MATERIAL_UPDATE, e -> new BusGui("Nos Bus",res).show());
         tb.addMaterialCommandToSideMenu("Materiels", FontImage.MATERIAL_UPDATE, e -> new MaterielGui("Nos Materiels",res).show());
         tb.addMaterialCommandToSideMenu("Demandes", FontImage.MATERIAL_UPDATE, e -> new DemandesForm(res).show());
-        tb.addMaterialCommandToSideMenu("Reclamation", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+        tb.addMaterialCommandToSideMenu("Reclamation", FontImage.MATERIAL_UPDATE, e -> new HomeReclamationForm(res).show());
         tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_SETTINGS, e -> new ProfilForm(res).show());
         tb.addMaterialCommandToSideMenu("Confidentialité", FontImage.MATERIAL_SETTINGS, e -> new ResetForm(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new LoginForm(res).show());

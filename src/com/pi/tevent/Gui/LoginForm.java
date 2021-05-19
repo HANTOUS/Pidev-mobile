@@ -38,7 +38,7 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.plaf.Border;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.UIManager;
-import com.codename1.ui.util.Resources;
+
 import com.codename1.ui.util.UIBuilder;
 //import com.mycompany.myapp.entities.User;
 //import com.mycompany.myapp.services.FosUserServices;
@@ -57,6 +57,7 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
+import com.pi.tevent.Services.UtilisateurServices;
 
 /**
  *
@@ -107,7 +108,13 @@ public class LoginForm extends BaseForm{
         content.setScrollableY(true);
         add(BorderLayout.SOUTH, content);
         signIn.requestFocus();
-        signIn.addActionListener(e -> new ProfilForm(res).show());
+        signIn.addActionListener(e -> 
+            {   UtilisateurServices us = new UtilisateurServices();
+                if ((email.getText().equals("")) || ((password.getText().equals("")))) {
+                    Dialog.show("Vérifiez Vos Champs", "Vérifiez Vos Champs", null, "ok");
+                }
+                us.getInstance().signin(email,password,res);}
+        );
     }
    /*     f = new Form("Se Connecter", BoxLayout.y());
         f.getStyle().setBgColor(0xFD5056);
