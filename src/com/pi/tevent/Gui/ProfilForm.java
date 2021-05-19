@@ -31,7 +31,9 @@ import com.codename1.io.FileSystemStorage;
 import com.pi.tevent.utils.SessionUser;
 import com.pi.tevent.Entities.Utilisateur;
 import java.text.SimpleDateFormat;  
+import java.util.Date;
 import com.codename1.ui.spinner.Picker;
+import com.pi.tevent.Services.UtilisateurServices;
 /**
  *
  * @author hanto
@@ -49,7 +51,7 @@ public class ProfilForm extends BaseForm{
         super.addSideMenu(res);
         
         tb.addSearchCommand(e -> {});
-        
+        Utilisateur user =  SessionUser.getUser();
         
         Image img = res.getImage("about1.jpg");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
@@ -63,20 +65,28 @@ public class ProfilForm extends BaseForm{
         Label twitter = new Label("486 followers", res.getImage("twitter-logo.png"), "BottomPad");
         facebook.setTextPosition(BOTTOM);
         twitter.setTextPosition(BOTTOM);*/
-        
+       /* try{
+            Image photo = Image.createImage(user.getImage());
+            if(photo.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
+                 photo = photo.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
+            }}catch(IOException e){
+            e.printStackTrace();
+        } 
+       */
         add(BorderLayout.NORTH,LayeredLayout.encloseIn(
                 sl,
                 BorderLayout.south(
                     GridLayout.encloseIn(3, 
                             new Label(),
-                            FlowLayout.encloseCenter(
+                            FlowLayout.encloseCenter( 
                                 new Label(res.getImage("pdp.jpg"), "PictureWhiteBackground")),
                            new Label()
                     )
                 )
         ));
+            
         //SessionUser su = new SessionUser();
-        Utilisateur user =  SessionUser.getUser();
+        
         TextField nom = new TextField(user.getNom());
         nom.setUIID("TextFieldBlack");
        // addStringValue("Nom", nom);
@@ -131,8 +141,16 @@ public class ProfilForm extends BaseForm{
             Boolean x =Dialog.show("Attention!!!", "vous voulez modifier votre profile" ,"Oui", "Non");
             if(x)
              { 
-                // fs.modifierProfile(user.getId(), email.getText(), num.getText());
-                 Dialog.show("Success", "modification de votre profile avec succéee" ,"Ok",null);
+                UtilisateurServices us = new UtilisateurServices();
+                us.getInstance().modifierProfile( user.getId(),nom, prenom, email, cin, dateN,user.getImage(),res);
+                user.setNom(nom.getText());
+                user.setPrenom(prenom.getText());
+                user.setEmail(email.getText());
+                user.setCin(cin.getText());
+                user.setDateNaissance((Date) dateN.getValue());
+                user.setImage(user.getImage());
+                SessionUser.setUser(user);
+                 //Dialog.show("Success", "modification de votre profile avec succéee" ,"Ok",null);
              }
             });
         /*TextField password = new TextField("sandeep", "Password", 20, TextField.PASSWORD);

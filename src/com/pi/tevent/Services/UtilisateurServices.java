@@ -32,10 +32,17 @@ import com.pi.tevent.Gui.EmailForm;
 import com.pi.tevent.Gui.ForgotForm;
 import com.pi.tevent.Gui.BaseForm;
 import com.pi.tevent.Gui.LoginForm;
+import com.pi.tevent.Gui.ResetForm;
 import com.pi.tevent.Entities.Utilisateur;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.codename1.ui.spinner.Picker;
+import com.codename1.messaging.Message;
+import com.codename1.ui.Display;
+import com.codename1.media.Media;
+import com.codename1.media.MediaManager;
+import java.io.IOException;
+import com.codename1.io.Log;
 /**
  *
  * @author hanto
@@ -73,6 +80,13 @@ public class UtilisateurServices {
             String responseData = new String(data);
             System.out.println("data: "+responseData);
             req.removeResponseListener(this);
+            
+            Message m = new Message("<h1>Activation de Votre Compte</h1>\n" +
+            "<p>Vous avez cree un compte sur notre site Tunisia Events, veuillez copier le code ci-dessous pour l'activer</p>\n" +
+            "<p>"+"CODE"+"</p>");
+            m.setMimeType(Message.MIME_HTML);
+
+            Display.getInstance().sendMessage(new String[] {email.getText().toString()}, "Activation du Compte", m);
             }
         });
 
@@ -114,6 +128,7 @@ public class UtilisateurServices {
                     u.setNom(user.get("nom").toString());
                     u.setPrenom(user.get("prenom").toString());
                     u.setCin(String.valueOf((int)Float.parseFloat(user.get("cin").toString())));
+                    u.setImage(user.get("image").toString());
 
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-M-dd");
                     Date date = formatter.parse(user.get("dateNaissance").toString());
@@ -123,8 +138,14 @@ public class UtilisateurServices {
                     SessionUser.setUser(u);
                     System.out.println("user : "+u);
                 //    }
-                if (!users.isEmpty())
-                    new ProfilForm(res).show();
+                if (!users.isEmpty()){
+                     try {
+                        Media m = MediaManager.createBackgroundMedia("file://C:\\Users\\hanto\\Desktop\\Esprit\\3eme\\PI\\TEvent\\src\\com\\pi\\tevent\\uploads\\welcome.mp3");
+                        m.play();
+                    } catch (IOException err) {
+                        Log.e(err);
+                    }
+                    new ProfilForm(res).show();}
                 req.removeResponseListener(this);
             }
             }
@@ -287,12 +308,11 @@ public class UtilisateurServices {
         
     }
 
-   /* public void modifierProfile(TextField nom,TextField prenom,TextField email,TextField cin,Picker dateN,Resources res ){
+    public void modifierProfile(int id,TextField nom,TextField prenom,TextField email,TextField cin,Picker dateN,String photo,Resources res ){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-M-dd");  
         String date = formatter.format(dateN.getDate()); 
-        String url = Statics.BASE_URL+"/user/signup?nom="+nom.getText().toString()+"&prenom="+prenom.getText().toString()+
-        "&email="+email.getText().toString()+"&cin="+cin.getText().toString()+"&password="+password.getText().toString()+
-        "&dateNaissance="+date;
+        String url = Statics.BASE_URL+"/user/profile?id="+id+"&nom="+nom.getText().toString()+"&prenom="+prenom.getText().toString()+
+        "&email="+email.getText().toString()+"&cin="+cin.getText().toString()+"&dateNaissance="+date+"&photo="+photo;
         
         req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -306,7 +326,36 @@ public class UtilisateurServices {
         });
 
         NetworkManager.getInstance().addToQueueAndWait(req);
-        
+    }
 
-    }*/
+    public void changerPassword(String email,TextField password,TextField newPassword,Resources res ){
+        
+        String url = Statics.BASE_URL+"/api/changerPassword?email="+email+"&password="+password.getText().toString()+"&newPassword="+newPassword.getText().toString();
+        
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                JSONParser j = new JSONParser();
+
+                String json =  new String(req.getResponseData())+"";
+                try{
+                    System.out.println(json);
+                    if (json.equals("fail")){
+                        Dialog.show("Echec ","Réessayer!","OK",null);
+                     }
+                    else if(json.equals("mot de passe actuel invalid")){
+                        Dialog.show("Echec ","Mot de passe Actuel est incorrecte","OK",null);
+                     }
+                    else if (json.equals("mot de passe changé"))  {  
+                        Dialog.show("Information ","Votre mot de passe a été changer!","OK",null);
+                        new ResetForm(res).show();}
+                    }
+                catch(Exception ex){
+                    ex.printStackTrace();}
+            }
+        });
+
+        NetworkManager.getInstance().addToQueueAndWait(req);
+    }
 }

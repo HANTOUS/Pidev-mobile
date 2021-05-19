@@ -22,6 +22,10 @@ import com.codename1.components.ScaleImageLabel;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.Image;
+import com.pi.tevent.utils.SessionUser;
+import com.pi.tevent.Entities.Utilisateur;
+import com.pi.tevent.Services.UtilisateurServices;
+import com.codename1.ui.Dialog;
 /**
  *
  * @author hanto
@@ -41,7 +45,7 @@ public class ResetForm extends BaseForm{
         
         tb.addSearchCommand(e -> {});
         
-        
+        Utilisateur user =  SessionUser.getUser();
         Image img = res.getImage("about1.jpg");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
@@ -92,7 +96,16 @@ public class ResetForm extends BaseForm{
         content.setScrollableY(true);
         add(BorderLayout.SOUTH, content);
         valid.requestFocus();
-        valid.addActionListener(e -> new ProfilForm(res).show());
+        valid.addActionListener(e -> {
+            if (pwd.getText().isEmpty()) {
+               Dialog.show("Vérifiez Vos Champs", "!!!  Vous devez entrer votre mot de passe !!!", null, "ok");
+            } else if (! pwd.getText().equals(pwd1.getText())) {
+                Dialog.show("Vérifiez Vos Champs", "!!!  Vous devez entrer le meme mot de passe !!!", null, "ok");
+            }
+            else{
+            UtilisateurServices us = new UtilisateurServices();
+            us.getInstance().changerPassword( user.getEmail(),pwdAct,pwd,res);}
+        });
 }
 
 }
