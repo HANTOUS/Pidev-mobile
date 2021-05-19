@@ -26,6 +26,7 @@ import com.pi.tevent.Gui.AddBusFrom;
 import com.pi.tevent.Gui.AddMaterielGui;
 import com.pi.tevent.Gui.BusAGui;
 import com.pi.tevent.Gui.BusGui;
+import com.pi.tevent.Gui.HomeFormEvent;
 import com.pi.tevent.Gui.LoginForm;
 import com.pi.tevent.Gui.MaterielAGui;
 
@@ -49,10 +50,7 @@ public class MyApplication   {
     }
     
     public void start()  {
-        if(current != null){
-            current.show();
-            return;
-        }
+        
 
 //           new AddDemandeBusForm(theme).show();
        // new AddDemandeChauffeurForm(theme).show();
@@ -64,12 +62,12 @@ public class MyApplication   {
 //        new ListDemandeChauffeurForm(theme).show();
 //        new ListDemandeMaterielForm(theme).show();
 
-new DemandesForm(theme).show();
+//new DemandesForm(theme).show();
 //new ChartForm(theme).show();
-
-// new LoginForm(theme).show();
+ // new HomeFormEvent().show();
+new LoginForm(theme).show();
 //    new LISTESSAYAGE(theme).show();
-        //new LoginForm(theme).show();
+     //   new HomeFormEvent().show();
         //new AddBusFrom("Add Bus", theme).show();
 //        new MaterielAGui("Nos Materiel", theme).show();
     }
@@ -83,6 +81,7 @@ new DemandesForm(theme).show();
     }
     
     public void destroy() {
+        
     }
 
 }
