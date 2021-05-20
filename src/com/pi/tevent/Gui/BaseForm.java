@@ -72,8 +72,10 @@ public class BaseForm extends Form {
         ));
         
         tb.addMaterialCommandToSideMenu("Camping", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
-        tb.addMaterialCommandToSideMenu("Festival", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+        tb.addMaterialCommandToSideMenu("Add Festival", FontImage.MATERIAL_UPDATE, e -> new AddFestivalForm(res).show());
+        tb.addMaterialCommandToSideMenu("Show Festival", FontImage.MATERIAL_UPDATE, e -> new ShowfestivalForm(res).show());
         tb.addMaterialCommandToSideMenu("Randonné", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+        tb.addMaterialCommandToSideMenu("Sponsor", FontImage.MATERIAL_UPDATE, e -> new AddSponsorForm(res).show());
         tb.addMaterialCommandToSideMenu("Demandes", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
         tb.addMaterialCommandToSideMenu("Materiels", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
         tb.addMaterialCommandToSideMenu("Reclamation", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());

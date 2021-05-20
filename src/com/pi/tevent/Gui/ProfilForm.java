@@ -110,7 +110,7 @@ public class ProfilForm extends BaseForm{
         add(BorderLayout.CENTER, content);
         
         Button mod = new Button("Modifier");
-        Button changer = new Button("Chnager photo de profile");
+        Button changer = new Button("Changer photo de profile");
         changer.addActionListener(e -> changerImage());
         changer.setUIID("LinkChanger");
         add(BorderLayout.SOUTH, BoxLayout.encloseY(
