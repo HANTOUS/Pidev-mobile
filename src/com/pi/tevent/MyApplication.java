@@ -26,15 +26,20 @@ import com.pi.tevent.Gui.AddBusFrom;
 import com.pi.tevent.Gui.AddMaterielGui;
 import com.pi.tevent.Gui.BusAGui;
 import com.pi.tevent.Gui.BusGui;
+import com.pi.tevent.Gui.HomeFormEvent;
 import com.pi.tevent.Gui.LoginForm;
 import com.pi.tevent.Gui.MaterielAGui;
 
 
 import com.pi.tevent.Gui.AddFeedbackForm;
+import com.pi.tevent.Gui.AddFestivalForm;
 import com.pi.tevent.Gui.AddReclamationForm;
 import com.pi.tevent.Gui.HomeFeedbackForm;
 import com.pi.tevent.Gui.HomeReclamationForm;
+import com.pi.tevent.Gui.ListDemandeBusForm;
+import com.pi.tevent.Gui.ListReclamationForm;
 import com.pi.tevent.Gui.LoginForm;
+import com.pi.tevent.Gui.MaterielGui;
 import com.pi.tevent.Gui.RegisterForm;
 
 /**
@@ -56,12 +61,11 @@ public class MyApplication   {
     }
     
     public void start()  {
-        if(current != null){
-            current.show();
-            return;
-        }
+        
 
            new AddDemandeBusForm(theme).show();
+
+       //   new AddDemandeBusForm(theme).show();
        // new AddDemandeChauffeurForm(theme).show();
 //        new AddDemandeMaterielForm(theme).show();
 // new ListDemandeBusForm(theme).show();
@@ -78,8 +82,10 @@ public class MyApplication   {
 //    new LISTESSAYAGE(theme).show();
         //new LoginForm(theme).show();
 //        new AddBusFrom("Add Bus", theme).show();
+ // new HomeFormEvent().show();
+ 
 //        new MaterielAGui("Nos Materiel", theme).show();
-       // new AddFeedbackForm(theme).show();
+      
     }
 
     public void stop() {
@@ -91,6 +97,7 @@ public class MyApplication   {
     }
     
     public void destroy() {
+        
     }
 
 }

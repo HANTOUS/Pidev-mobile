@@ -59,6 +59,7 @@ Toolbar tb = new Toolbar(true);
         setTitle("Detaille Demande Bus");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
+                super.addSideMenu(theme);
 
         tb.addSearchCommand(e -> {});
         

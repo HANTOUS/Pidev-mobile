@@ -45,6 +45,10 @@ public class AddReclamationForm extends BaseForm {
 
         setTitle("Ajouter Reclamation");
         setLayout(BoxLayout.y());
+        this.add(createDLineSeparator());
+this.add(createDLineSeparator());
+this.add(createLineSeparator(000000));
+        
         TextField tfuser_id = new TextField("","Id user");
         TextField tfsujet = new TextField("","sujet");
         TextField tfcontenu = new TextField("","conenu");
@@ -68,6 +72,7 @@ public class AddReclamationForm extends BaseForm {
             }
         
     });
-    addAll( tfsujet, tfcontenu, btnAjouter);
+    addAll(tfsujet, tfcontenu, btnAjouter);
+
     }
     }

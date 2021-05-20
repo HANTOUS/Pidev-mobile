@@ -29,21 +29,33 @@ import com.pi.tevent.Entities.Bus;
  *
  * @author al199
  */
-public class BusGui extends Form{
+public class BusGui extends BaseForm{
     
     private Resources theme;
     private BusService bs= new BusService();
     ArrayList<Bus> listBus= new ArrayList<>();
 
     public BusGui(String title, Resources theme){
-        super(title, BoxLayout.y());
+        super( title,BoxLayout.y());
+        Toolbar tb = new Toolbar(true);
+        setToolbar(tb);
+        getTitleArea().setUIID("Container");
+        setTitle("Nos Bus");
+        getContentPane().setScrollVisible(false);
+        setUIID("Profile");
+        this.add(createDLineSeparator());
+        this.add(createDLineSeparator());
+        
+        super.addSideMenu(theme);
+        
+        //super(title, BoxLayout.y());
         this.theme = theme;
         listBus = bs.listBus();
         this.addGUIs();
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         
         Container itemsContainer = new Container(BoxLayout.y());

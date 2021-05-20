@@ -4,19 +4,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DetailsDemandeChauffeurForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeChauffeurForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeBusForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DemandesForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ProfilForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DetailsDemandeMaterielForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeChauffeurForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ChartForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/AddDemandeMaterielForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DemandesAdminForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeBusForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/ListDemandeMaterielForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/codenameProjectHadher/Pidev-mobile/src/com/pi/tevent/Gui/DetailsDemandeBusForm.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/MaterielGui.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/MyApplication.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/BusGui.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/MaterielAGui.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/UpdateBusGui.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/UpdateMaterielGui.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/ChartForm.java</file>
+            <file>file:/E:/Users/skand/Documents/3EME/Semestre_2/PIDEV/MOBILE/GIT%20MOBILE/Pidev-mobile/src/com/pi/tevent/Gui/BusAGui.java</file>
         </group>
     </open-files>
 </project-private>

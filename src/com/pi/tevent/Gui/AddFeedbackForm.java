@@ -34,8 +34,11 @@ public class AddFeedbackForm extends BaseForm {
         getContentPane().setScrollVisible(false);
         
         setTitle("Ajouter Feedback");
-        
         setLayout(BoxLayout.y());
+        this.add(createDLineSeparator());
+this.add(createDLineSeparator());
+this.add(createLineSeparator(000000));
+        
         TextField tfnote = new TextField("","note");
         TextField tfremarque = new TextField("","remarque");
 

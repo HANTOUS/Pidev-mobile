@@ -31,7 +31,8 @@ public class DemandesForm extends BaseForm{
         this.theme = theme ;
         addGUIs();
         addActions();
-        
+                        super.addSideMenu(theme);
+
     }
 
     public void addGUIs() {

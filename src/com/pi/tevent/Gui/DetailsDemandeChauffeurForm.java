@@ -51,7 +51,7 @@ public class DetailsDemandeChauffeurForm extends BaseForm {
         setTitle("Detaille Demande Chauffeur");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
-
+        
         tb.addSearchCommand(e -> {});
         
         

@@ -13,13 +13,14 @@ import com.codename1.ui.util.Resources;
 import java.util.ArrayList;
 import com.pi.tevent.Services.MaterielService;
 import com.pi.tevent.Entities.Materiel;
+import com.codename1.ui.Toolbar;
 
 /**
  * GUI builder created Form
  *
  * @author al199
  */
-public class MaterielGui extends com.codename1.ui.Form {
+    public class MaterielGui extends BaseForm {
     
     private Resources theme;
     private MaterielService ms= new MaterielService();
@@ -27,13 +28,23 @@ public class MaterielGui extends com.codename1.ui.Form {
 
     public MaterielGui(String title, Resources theme) {
         super(title, BoxLayout.y());
+        Toolbar tb = new Toolbar(true);
+        setToolbar(tb);
+        getTitleArea().setUIID("Container");
+        setTitle("Nos Materiels");
+        getContentPane().setScrollVisible(false);
+        setUIID("Profile");
+        this.add(createDLineSeparator());
+        this.add(createDLineSeparator());
+        
+        super.addSideMenu(theme);
         this.theme = theme;
         listMateriel = ms.listMateriel();
         this.addGUIs();
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         
         Container itemsContainer = new Container(BoxLayout.y());

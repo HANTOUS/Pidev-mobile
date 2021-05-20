@@ -108,10 +108,10 @@ public class ReclamationServices {
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                ReclamationServices dbs = new ReclamationServices();
+                ReclamationServices rs = new ReclamationServices();
 
                 try {
-                    listReclamation = dbs.parseReclamation(new String(req.getResponseData()));
+                    listReclamation = rs.parseReclamation(new String(req.getResponseData()));
                 } catch (ParseException ex) {
                     System.out.println(ex.getMessage());
                 }
@@ -145,10 +145,10 @@ public class ReclamationServices {
         return listReclamation;
     }
     
-     public void deleteReclamation (int id) {
+     public void deleteReclamation (Reclamation r) {
         ConnectionRequest con = new ConnectionRequest();
       //  "http://localhost/pi-dev/web/app_dev.php/forum/supprimerComMobile?idCom=" + id;
-        String Url = Statics.BASE_URL+"/deleteRandonnejson?id=" + id;
+        String Url = Statics.BASE_URL+"/deleteReclamationMobile?id=" + r.getId();
         con.setUrl(Url);
         con.addResponseListener((e) -> {
             String str = new String(con.getResponseData());

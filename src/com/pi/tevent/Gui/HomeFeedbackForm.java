@@ -24,6 +24,7 @@ public class HomeFeedbackForm extends BaseForm {
         add(new Label("Choisissez une option s'il vous plait"));
         Button btnAddFee = new Button("Ajouter un Feedback");
         Button btnListFee = new Button("Liste Feedback");
+                        super.addSideMenu(res);
 
         btnAddFee.addActionListener(e-> new AddReclamationForm(res).show());
         btnListFee.addActionListener(e-> new ListFeedbackForm(res).show());

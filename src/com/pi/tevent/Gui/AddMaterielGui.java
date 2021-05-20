@@ -14,6 +14,7 @@ import com.codename1.ui.Label;
 import com.codename1.ui.TextArea;
 import com.codename1.ui.TextField;
 import com.codename1.ui.layouts.BoxLayout;
+
 import com.codename1.ui.table.TableLayout;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.Bus;
@@ -37,7 +38,7 @@ public class AddMaterielGui extends com.codename1.ui.Form {
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         Image imgBus = theme.getImage("booking.jpg");
         this.add(imgBus);
@@ -115,7 +116,8 @@ public class AddMaterielGui extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
-//////////////////-- DON'T EDIT BELOW THIS LINE!!!
+
+//////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          

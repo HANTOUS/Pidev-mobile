@@ -83,7 +83,7 @@ protected CategorySeries buildCategoryDataset(String title, double[] values) {
 
 public ChartForm(Resources theme) {
     
-    super("TITLE", BoxLayout.yCenter());
+    super("TITLE", BoxLayout.y());
     this.theme=theme ;
     user =  SessionUser.getUser();
 
