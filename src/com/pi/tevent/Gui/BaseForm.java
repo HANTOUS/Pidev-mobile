@@ -23,15 +23,22 @@ import com.codename1.ui.util.Resources;
  */
 public class BaseForm extends Form {
 
+    //Form previous;
     public BaseForm() {
+                    //  this.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, evt -> previous.showBack());
+
     }
 
     public BaseForm(Layout contentPaneLayout) {
         super(contentPaneLayout);
+              //this.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, evt -> previous.showBack());
+
     }
 
-    public BaseForm(String title, Layout contentPaneLayout) {
+    public BaseForm(String title, Layout contentPaneLayout ) {
         super(title, contentPaneLayout);
+     // this.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, evt -> previous.showBack());
+
     }
     
     
@@ -71,14 +78,17 @@ public class BaseForm extends Form {
                         new Label(res.getImage("pdp.jpg"), "PictureWhiteBackground"))
         ));
         
-        tb.addMaterialCommandToSideMenu("Camping", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+
+
+        tb.addMaterialCommandToSideMenu("Camping et randonnées", FontImage.MATERIAL_UPDATE, e -> new HomeFormEvent().show());
         tb.addMaterialCommandToSideMenu("Add Festival", FontImage.MATERIAL_UPDATE, e -> new AddFestivalForm(res).show());
         tb.addMaterialCommandToSideMenu("Show Festival", FontImage.MATERIAL_UPDATE, e -> new ShowfestivalForm(res).show());
-        tb.addMaterialCommandToSideMenu("Randonné", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
-        tb.addMaterialCommandToSideMenu("Sponsor", FontImage.MATERIAL_UPDATE, e -> new AddSponsorForm(res).show());
-        tb.addMaterialCommandToSideMenu("Demandes", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
-        tb.addMaterialCommandToSideMenu("Materiels", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
-        tb.addMaterialCommandToSideMenu("Reclamation", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+        //tb.addMaterialCommandToSideMenu("Festival", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+        //tb.addMaterialCommandToSideMenu("Randonné", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
+        tb.addMaterialCommandToSideMenu("Bus", FontImage.MATERIAL_UPDATE, e -> new BusGui("Nos Bus",res).show());
+        tb.addMaterialCommandToSideMenu("Materiels", FontImage.MATERIAL_UPDATE, e -> new MaterielGui("Nos Materiels",res).show());
+        tb.addMaterialCommandToSideMenu("Demandes", FontImage.MATERIAL_UPDATE, e -> new DemandesForm(res).show());
+        tb.addMaterialCommandToSideMenu("Reclamation", FontImage.MATERIAL_UPDATE, e -> new HomeReclamationForm(res).show());
         tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_SETTINGS, e -> new ProfilForm(res).show());
         tb.addMaterialCommandToSideMenu("Confidentialité", FontImage.MATERIAL_SETTINGS, e -> new ResetForm(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new LoginForm(res).show());

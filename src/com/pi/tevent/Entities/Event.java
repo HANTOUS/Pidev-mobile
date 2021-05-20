@@ -21,6 +21,17 @@ public class Event {
    protected String type,description;
    protected  float tarif,lat,lng;
 
+
+    public Event(String nomevent, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String description) {
+        this.nomevent = nomevent;
+        this.heuredebut = heuredebut;
+        this.heurefin = heurefin;
+        this.lieu = lieu;
+        this.nbmaxparticipant = nbmaxparticipant;
+        this.description = description;
+    }
+
+
     public Event(int id, String nomevent, Date datedebut, Date datefin, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String type, String description, float tarif, float lat, float lng) {
         this.id = id;
         this.nomevent = nomevent;
@@ -37,6 +48,64 @@ public class Event {
         this.lng = lng;
     }
 
+    public Event(int id, String nomevent) {
+        this.id = id;
+        this.nomevent = nomevent;
+    }
+
+    public Event(String nomevent) {
+        this.nomevent = nomevent;
+    }
+
+    public Event(String nomevent, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String description, float tarif) {
+        this.nomevent = nomevent;
+        this.heuredebut = heuredebut;
+        this.heurefin = heurefin;
+        this.lieu = lieu;
+        this.nbmaxparticipant = nbmaxparticipant;
+        this.description = description;
+        this.tarif = tarif;
+    }
+
+    public Event(String nomevent, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String type, String description, float tarif) {
+        this.nomevent = nomevent;
+        this.heuredebut = heuredebut;
+        this.heurefin = heurefin;
+        this.lieu = lieu;
+        this.nbmaxparticipant = nbmaxparticipant;
+        this.type = type;
+        this.description = description;
+        this.tarif = tarif;
+    }
+
+    public Event(String nomevent, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String type, String description, float tarif, float lat, float lng) {
+        this.nomevent = nomevent;
+        this.heuredebut = heuredebut;
+        this.heurefin = heurefin;
+        this.lieu = lieu;
+        this.nbmaxparticipant = nbmaxparticipant;
+        this.type = type;
+        this.description = description;
+        this.tarif = tarif;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
+       public Event( String nomevent, Date datedebut, Date datefin, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String type, String description, float tarif, float lat, float lng) {
+        
+        this.nomevent = nomevent;
+        this.datedebut = datedebut;
+        this.datefin = datefin;
+        this.heuredebut = heuredebut;
+        this.heurefin = heurefin;
+        this.lieu = lieu;
+        this.nbmaxparticipant = nbmaxparticipant;
+        this.type = type;
+        this.description = description;
+        this.tarif = tarif;
+        this.lat = lat;
+        this.lng = lng;
+       }
     public Event() {
     }
 
@@ -148,7 +217,7 @@ public class Event {
     public String toString() {
         return "Event{" + "id=" + id + ", nomevent=" + nomevent + ", datedebut=" + datedebut + ", datefin=" + datefin + ", heuredebut=" + heuredebut + ", heurefin=" + heurefin + ", lieu=" + lieu + ", nbmaxparticipant=" + nbmaxparticipant + ", type=" + type + ", description=" + description + ", tarif=" + tarif + ", lat=" + lat + ", lng=" + lng + '}';
     }
-    
-    
 }
+    
+    
 

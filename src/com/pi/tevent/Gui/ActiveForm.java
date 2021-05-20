@@ -19,14 +19,14 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
-
+import com.pi.tevent.Services.UtilisateurServices;
 /**
  *
  * @author hanto
  */
-public class ActiveForm extends BaseForm{
+public class ActiveForm extends BaseForm {
     
-
+ 
     public ActiveForm(Resources res) {
         super(new BorderLayout());
         Toolbar tb = new Toolbar(true);
@@ -66,7 +66,10 @@ public class ActiveForm extends BaseForm{
         content.setScrollableY(true);
         add(BorderLayout.SOUTH, content);
         login.requestFocus();
-        login.addActionListener(e -> new LoginForm(res).show());
+        login.addActionListener(e -> {
+            UtilisateurServices us = new UtilisateurServices();
+            us.getInstance().activerCompte( code,res);
+        });
     }
     
 }

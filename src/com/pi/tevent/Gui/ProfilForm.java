@@ -28,7 +28,12 @@ import com.codename1.ui.Dialog;
 import com.codename1.ui.events.*;
 import java.io.IOException;
 import com.codename1.io.FileSystemStorage;
-
+import com.pi.tevent.utils.SessionUser;
+import com.pi.tevent.Entities.Utilisateur;
+import java.text.SimpleDateFormat;  
+import java.util.Date;
+import com.codename1.ui.spinner.Picker;
+import com.pi.tevent.Services.UtilisateurServices;
 /**
  *
  * @author hanto
@@ -40,13 +45,13 @@ public class ProfilForm extends BaseForm{
         Toolbar tb = new Toolbar(true);
         setToolbar(tb);
         getTitleArea().setUIID("Container");
-        //setTitle("Profile");
+        setTitle("Profile");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
         super.addSideMenu(res);
         
         tb.addSearchCommand(e -> {});
-        
+        Utilisateur user =  SessionUser.getUser();
         
         Image img = res.getImage("about1.jpg");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
@@ -60,37 +65,50 @@ public class ProfilForm extends BaseForm{
         Label twitter = new Label("486 followers", res.getImage("twitter-logo.png"), "BottomPad");
         facebook.setTextPosition(BOTTOM);
         twitter.setTextPosition(BOTTOM);*/
-        
+       /* try{
+            Image photo = Image.createImage(user.getImage());
+            if(photo.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
+                 photo = photo.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
+            }}catch(IOException e){
+            e.printStackTrace();
+        } 
+       */
         add(BorderLayout.NORTH,LayeredLayout.encloseIn(
                 sl,
                 BorderLayout.south(
                     GridLayout.encloseIn(3, 
                             new Label(),
-                            FlowLayout.encloseCenter(
+                            FlowLayout.encloseCenter( 
                                 new Label(res.getImage("pdp.jpg"), "PictureWhiteBackground")),
                            new Label()
                     )
                 )
         ));
+            
+        //SessionUser su = new SessionUser();
         
-        TextField nom = new TextField("Hantous");
+        TextField nom = new TextField(user.getNom());
         nom.setUIID("TextFieldBlack");
        // addStringValue("Nom", nom);
         
-        TextField prenom = new TextField("Mehdi");
+        TextField prenom = new TextField(user.getPrenom());
         prenom.setUIID("TextFieldBlack");
         //addStringValue("Prenom", prenom);
 
-        TextField email = new TextField("mehdi.hantous@esprit.tn", "E-Mail", 20, TextField.ANY);
+        TextField email = new TextField(user.getEmail(), "E-Mail", 20, TextField.ANY);
         email.setUIID("TextFieldBlack");
         //addStringValue("Email", email);
         
-        TextField cin = new TextField("09634082", "CIN", 20, TextField.EMAILADDR);
+        TextField cin = new TextField(user.getCin(), "CIN", 20, TextField.EMAILADDR);
         cin.setUIID("TextFieldBlack");
         //addStringValue("CIN", cin);
         
-        TextField DateN = new TextField("04-12-1998", "Daten Naissance", 20, TextField.ANY);
-        DateN.setUIID("TextFieldBlack");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyy");  
+        Picker dateN = new Picker();
+        dateN.setType(Display.PICKER_TYPE_DATE);
+        dateN.setDate(user.getDateNaissance());  
+        //TextField DateN = new TextField(dateN, "Daten Naissance", 20, TextField.ANY);
+        dateN.setUIID("TextFieldBlack");
         //addStringValue("Date Naissance", DateN);
         
         Container content = BoxLayout.encloseY(
@@ -102,7 +120,8 @@ public class ProfilForm extends BaseForm{
                 createLineSeparator(),
                 FlowLayout.encloseCenter(new Label("CIN", "PaddedLabel"), cin),
                 createLineSeparator(),
-                FlowLayout.encloseCenter(new Label("Date Naissance", "PaddedLabel"), DateN),
+                FlowLayout.encloseCenter(new Label("Date Naissance", "PaddedLabel")),
+                FlowLayout.encloseCenter(dateN),
                 createLineSeparator()
 
         );
@@ -122,8 +141,16 @@ public class ProfilForm extends BaseForm{
             Boolean x =Dialog.show("Attention!!!", "vous voulez modifier votre profile" ,"Oui", "Non");
             if(x)
              { 
-                // fs.modifierProfile(user.getId(), email.getText(), num.getText());
-                 Dialog.show("Success", "modification de votre profile avec succéee" ,"Ok",null);
+                UtilisateurServices us = new UtilisateurServices();
+                us.getInstance().modifierProfile( user.getId(),nom, prenom, email, cin, dateN,user.getImage(),res);
+                user.setNom(nom.getText());
+                user.setPrenom(prenom.getText());
+                user.setEmail(email.getText());
+                user.setCin(cin.getText());
+                user.setDateNaissance((Date) dateN.getValue());
+                user.setImage(user.getImage());
+                SessionUser.setUser(user);
+                 //Dialog.show("Success", "modification de votre profile avec succéee" ,"Ok",null);
              }
             });
         /*TextField password = new TextField("sandeep", "Password", 20, TextField.PASSWORD);
