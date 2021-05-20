@@ -32,6 +32,7 @@ import com.pi.tevent.Gui.MaterielAGui;
 
 
 import com.pi.tevent.Gui.AddFeedbackForm;
+import com.pi.tevent.Gui.AddFestivalForm;
 import com.pi.tevent.Gui.AddReclamationForm;
 import com.pi.tevent.Gui.HomeFeedbackForm;
 import com.pi.tevent.Gui.HomeReclamationForm;
@@ -76,7 +77,7 @@ public class MyApplication   {
 //new ChartForm(theme).show();
 
  // new HomeFormEvent().show();
-new MaterielGui("Nos Materiels",theme).show();
+ new AddFestivalForm(theme).show();
 
  //new LoginForm(theme).show();
 
