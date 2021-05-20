@@ -22,13 +22,16 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.Reclamation;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.ReclamationServices;
+import com.pi.tevent.utils.SessionUser;
 
 /**
  *
  * @author Salim
  */
 public class AddReclamationForm extends BaseForm {
+        Utilisateur user ;
 
     
     public AddReclamationForm(Resources res) {
@@ -38,7 +41,8 @@ public class AddReclamationForm extends BaseForm {
             Form previous = Display.getInstance().getCurrent();
         tb.setBackCommand("", e -> previous.showBack());
         getContentPane().setScrollVisible(false);
-        
+                                             user =  SessionUser.getUser();
+
         setTitle("Ajouter Reclamation");
         setLayout(BoxLayout.y());
         TextField tfuser_id = new TextField("","Id user");
@@ -52,7 +56,7 @@ public class AddReclamationForm extends BaseForm {
             Dialog.show("Alert", "verifiez vos données SVP",new Command ("OK"));
             else {
                 try {
-                    Reclamation r = new Reclamation(Integer.parseInt(tfuser_id.getText()), tfsujet.getText(),tfcontenu.getText());
+                    Reclamation r = new Reclamation(user.getId(), tfsujet.getText(),tfcontenu.getText());
                 if (new ReclamationServices().addRec(r))
                 Dialog.show("Success", "Connection accepté",new Command ("OK"));
                 else 
@@ -64,6 +68,6 @@ public class AddReclamationForm extends BaseForm {
             }
         
     });
-    addAll(tfuser_id, tfsujet, tfcontenu, btnAjouter);
+    addAll( tfsujet, tfcontenu, btnAjouter);
     }
     }
