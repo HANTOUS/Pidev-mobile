@@ -130,8 +130,8 @@ public class UtilisateurServices {
                     u.setPrenom(user.get("prenom").toString());
                     u.setCin(String.valueOf((int)Float.parseFloat(user.get("cin").toString())));
                     u.setImage(user.get("image").toString());
-                     System.out.println("token : "+user.get("activation_token").toString());
-                    u.setActivation_token(user.get("activation_token").toString());
+                   // System.out.println("token : "+user.get("activation_token").toString());
+                  //  u.setActivation_token(user.get("activation_token").toString());
 
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-M-dd");
                     Date date = formatter.parse(user.get("dateNaissance").toString());
@@ -143,7 +143,7 @@ public class UtilisateurServices {
                 //    }
                 if (!users.isEmpty()){
                     System.out.println("token : "+u.getActivation_token());
-                    if(u.getActivation_token()==null){
+                  //  if(u.getActivation_token()==null){
                        try {
                            Media m = MediaManager.createBackgroundMedia("file://C:\\Users\\hanto\\Desktop\\Esprit\\3eme\\PI\\TEvent\\src\\com\\pi\\tevent\\uploads\\welcome.mp3");
                            m.play();
@@ -152,14 +152,12 @@ public class UtilisateurServices {
                        }
                        new ProfilForm(res).show();
                     }
-                    else{
-                        new ActiveForm(res).show();
-                    }
+                   
                         
                 req.removeResponseListener(this);
             }
             }
-            }
+            
         catch(Exception ex){
             ex.printStackTrace();}
             

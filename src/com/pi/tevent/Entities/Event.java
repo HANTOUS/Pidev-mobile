@@ -12,14 +12,15 @@ import java.util.Date;
  * @author maale
  */
 public class Event {
-    private int id;
-    private String nomevent;
-    private Date datedebut,datefin;
-    private String heuredebut,heurefin;
-    private String lieu;
-    private int nbmaxparticipant;
-    private String type,description;
-    private float tarif,lat,lng;
+   protected int id;
+   protected  String nomevent;
+   protected  Date datedebut,datefin;
+   protected  String heuredebut,heurefin;
+   protected  String lieu;
+   protected  int nbmaxparticipant;
+   protected String type,description;
+   protected  float tarif,lat,lng;
+
 
     public Event(String nomevent, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String description) {
         this.nomevent = nomevent;
@@ -29,6 +30,7 @@ public class Event {
         this.nbmaxparticipant = nbmaxparticipant;
         this.description = description;
     }
+
 
     public Event(int id, String nomevent, Date datedebut, Date datefin, String heuredebut, String heurefin, String lieu, int nbmaxparticipant, String type, String description, float tarif, float lat, float lng) {
         this.id = id;
@@ -103,7 +105,7 @@ public class Event {
         this.tarif = tarif;
         this.lat = lat;
         this.lng = lng;
-    }
+       }
     public Event() {
     }
 
@@ -215,6 +217,7 @@ public class Event {
     public String toString() {
         return "Event{" + "id=" + id + ", nomevent=" + nomevent + ", datedebut=" + datedebut + ", datefin=" + datefin + ", heuredebut=" + heuredebut + ", heurefin=" + heurefin + ", lieu=" + lieu + ", nbmaxparticipant=" + nbmaxparticipant + ", type=" + type + ", description=" + description + ", tarif=" + tarif + ", lat=" + lat + ", lng=" + lng + '}';
     }
-    
-    
 }
+    
+    
+

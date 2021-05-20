@@ -36,7 +36,7 @@ public class AddBusFrom extends com.codename1.ui.Form {
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         Image imgBus = theme.getImage("booking.jpg");
         this.add(imgBus);
@@ -106,7 +106,7 @@ public class AddBusFrom extends com.codename1.ui.Form {
     }
 
 
-////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          

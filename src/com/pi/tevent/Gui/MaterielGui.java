@@ -44,7 +44,7 @@ import com.codename1.ui.Toolbar;
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         
         Container itemsContainer = new Container(BoxLayout.y());

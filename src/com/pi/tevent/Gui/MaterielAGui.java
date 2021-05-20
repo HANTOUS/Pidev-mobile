@@ -39,7 +39,7 @@ public class MaterielAGui extends com.codename1.ui.Form {
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         
         Container itemsContainer = new Container(BoxLayout.y());
@@ -132,7 +132,7 @@ public class MaterielAGui extends com.codename1.ui.Form {
     }
 
 
-//////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+//////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          

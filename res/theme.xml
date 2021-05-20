@@ -15,6 +15,7 @@
     <image name="destination3.jpg"  />
     <image name="destination7.jpg"  />
     <image name="facebook-logo.png"  />
+    <image name="istockphoto-1132439239-640x640.jpg"  />
     <image name="Logo-Off.png"  />
     <image name="offer3.jpg"  />
     <image name="offer6.jpg"  />
@@ -164,7 +165,10 @@
         <val key="WhiteSeparator1.padUnit" value="2,2,2,2" />
         <val key="WhiteSeparator1.padding" value="2.0,2.0,2.0,2.0" />
         <val key="WhiteSeparator1.transparency" value="26" />
+        <val key="background44.bgImage" value="istockphoto-1132439239-640x640.jpg" />
+        <val key="background44.bgType" value="1" />
     </theme>
     <image name="tour.jpg"  />
     <image name="twitter-logo.png"  />
+    <image name="unnamed.png"  />
 </resource>

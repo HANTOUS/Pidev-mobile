@@ -38,7 +38,7 @@ public class UpdateBusGui extends com.codename1.ui.Form {
     }
     
     private void addGUIs(){
-        Container titleContainer = new Container(BoxLayout.xCenter());
+        Container titleContainer = new Container(BoxLayout.x());
         this.add(titleContainer);
         Image imgBus = theme.getImage("booking.jpg");
         this.add(imgBus);
