@@ -11,13 +11,13 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
-
+import com.codename1.ui.Toolbar;
 /**
  *
  * @author DELL
  */
 public class DemandesForm extends BaseForm{
-    Resources theme;
+    //Resources theme;
     Button ListBus ;
     Button ListChauffeur ;
     Button ListMateriel ;
@@ -28,9 +28,21 @@ public class DemandesForm extends BaseForm{
     Button Stat ;
     public DemandesForm(Resources theme){
         super("PAGE D'ACCEUIL", BoxLayout.y());
-        this.theme = theme ;
+        this.add(createDLineSeparator());
+        this.add(createDLineSeparator());
+        setTitle("Acceuil Event");
+        
+        setLayout(BoxLayout.y());
+        Toolbar tb = new Toolbar(true);
+        setToolbar(tb);
+        getTitleArea().setUIID("Container");
+        //setTitle("Profile");
+        getContentPane().setScrollVisible(false);
+        setUIID("Profile");
+        super.addSideMenu(theme);
+       // this.theme = theme ;
         addGUIs();
-        addActions();
+        addActions(theme);
         
     }
 
@@ -48,7 +60,7 @@ public class DemandesForm extends BaseForm{
        this.addAll(ListBus,ListChauffeur,ListMateriel,passerdc,passerdm,passerdb,Stat);
 //       this.add(passerdc,passerdm).add(passerdb);
     }
-    public void addActions( ){
+    public void addActions(Resources theme ){
         ListBus.addActionListener(evt -> new ListDemandeBusForm(theme).show() );
         ListChauffeur.addActionListener(evt -> new ListDemandeChauffeurForm(theme).show() );
         ListMateriel.addActionListener(evt -> new ListDemandeMaterielForm(theme).show() );

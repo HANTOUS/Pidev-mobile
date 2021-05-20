@@ -33,6 +33,7 @@ import com.pi.tevent.Gui.ForgotForm;
 import com.pi.tevent.Gui.BaseForm;
 import com.pi.tevent.Gui.LoginForm;
 import com.pi.tevent.Gui.ResetForm;
+import com.pi.tevent.Gui.ActiveForm;
 import com.pi.tevent.Entities.Utilisateur;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -81,12 +82,12 @@ public class UtilisateurServices {
             System.out.println("data: "+responseData);
             req.removeResponseListener(this);
             
-            Message m = new Message("<h1>Activation de Votre Compte</h1>\n" +
+           /* Message m = new Message("<h1>Activation de Votre Compte</h1>\n" +
             "<p>Vous avez cree un compte sur notre site Tunisia Events, veuillez copier le code ci-dessous pour l'activer</p>\n" +
             "<p>"+"CODE"+"</p>");
             m.setMimeType(Message.MIME_HTML);
 
-            Display.getInstance().sendMessage(new String[] {email.getText().toString()}, "Activation du Compte", m);
+            Display.getInstance().sendMessage(new String[] {email.getText().toString()}, "Activation du Compte", m);*/
             }
         });
 
@@ -129,6 +130,8 @@ public class UtilisateurServices {
                     u.setPrenom(user.get("prenom").toString());
                     u.setCin(String.valueOf((int)Float.parseFloat(user.get("cin").toString())));
                     u.setImage(user.get("image").toString());
+                     System.out.println("token : "+user.get("activation_token").toString());
+                    u.setActivation_token(user.get("activation_token").toString());
 
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-M-dd");
                     Date date = formatter.parse(user.get("dateNaissance").toString());
@@ -139,14 +142,22 @@ public class UtilisateurServices {
                     System.out.println("user : "+u);
                 //    }
                 if (!users.isEmpty()){
-                     try {
-                        Media m = MediaManager.createBackgroundMedia("file://C:\\Users\\hanto\\Desktop\\Esprit\\3eme\\PI\\TEvent\\src\\com\\pi\\tevent\\uploads\\welcome.mp3");
-                        m.play();
-                    } catch (IOException err) {
-                        Log.e(err);
+                    System.out.println("token : "+u.getActivation_token());
+                    if(u.getActivation_token()==null){
+                       try {
+                           Media m = MediaManager.createBackgroundMedia("file://C:\\Users\\hanto\\Desktop\\Esprit\\3eme\\PI\\TEvent\\src\\com\\pi\\tevent\\uploads\\welcome.mp3");
+                           m.play();
+                       } catch (IOException err) {
+                           Log.e(err);
+                       }
+                       new ProfilForm(res).show();
                     }
-                    new ProfilForm(res).show();}
+                    else{
+                        new ActiveForm(res).show();
+                    }
+                        
                 req.removeResponseListener(this);
+            }
             }
             }
         catch(Exception ex){

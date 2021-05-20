@@ -78,7 +78,7 @@ public class BaseForm extends Form {
                         new Label(res.getImage("pdp.jpg"), "PictureWhiteBackground"))
         ));
         
-        tb.addMaterialCommandToSideMenu("Camping et randonnées", FontImage.MATERIAL_UPDATE, e -> new HomeFormEvent().show());
+        tb.addMaterialCommandToSideMenu("Camping et randonnées", FontImage.MATERIAL_UPDATE, e -> new HomeFormEvent(res).show());
         //tb.addMaterialCommandToSideMenu("Festival", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
         //tb.addMaterialCommandToSideMenu("Randonné", FontImage.MATERIAL_UPDATE, e -> new LoginForm(res).show());
         tb.addMaterialCommandToSideMenu("Bus", FontImage.MATERIAL_UPDATE, e -> new BusGui("Nos Bus",res).show());

@@ -120,7 +120,7 @@ public class ListRandonnee extends BaseForm{
          
          holder1.add(holderID).add(holderSU).add(holderCO).add(holderET).add(holdernb).add(holderloc);
          holder.add(holder1)/*.add(supprimer)*/;
-         holderParent.add(holder).add(createLineSeparator());
+         holderParent.add(holder).add(createLineSeparator(000000));
 
         
         return holderParent;

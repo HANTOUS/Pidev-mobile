@@ -10,19 +10,31 @@ import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
-
+import com.codename1.ui.Toolbar;
 /**
  *
  * @author maale
  */
 public class HomeFormEvent extends BaseForm {
         Form current;
-        Resources theme;
-    public HomeFormEvent() {
-         current = this;
+      //  Resources theme;
+    public HomeFormEvent(Resources theme) {
+        current = this;
+        this.add(createDLineSeparator());
+        this.add(createDLineSeparator());
         setTitle("Acceuil Event");
+        
         setLayout(BoxLayout.y());
-        add(new Label("choisir une option"));
+        Toolbar tb = new Toolbar(true);
+        setToolbar(tb);
+        getTitleArea().setUIID("Container");
+        //setTitle("Profile");
+        getContentPane().setScrollVisible(false);
+        setUIID("Profile");
+        super.addSideMenu(theme);
+        
+        tb.addSearchCommand(e -> {});
+        //add(new Label("choisir une option"));
         Button btnAjouterRandonnee = new Button("Ajouter Randonnée");
         
         Button btnAjouterCamping = new Button("Ajouter Camping");

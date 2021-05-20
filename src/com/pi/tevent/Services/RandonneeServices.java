@@ -88,6 +88,15 @@ public class RandonneeServices {
                 Randonnee t = new Randonnee();
                 float id = Float.parseFloat(obj.get("id").toString());
                 t.setId((int)id);
+                 t.setNomevent(obj.get("nomevent").toString());
+               t.setHeuredebut(obj.get("heuredebut").toString());
+               t.setHeurefin(obj.get("heurefin").toString());
+               t.setDescription(obj.get("description").toString());
+               t.setLieu(obj.get("lieu").toString());
+               float tarif=Float.parseFloat(obj.get("tarif").toString());
+               t.setTarif(tarif);
+               float nbpart =Float.parseFloat(obj.get("nbmaxparticipant").toString());
+               t.setNbmaxparticipant((int)nbpart);
                // t.setTyperand(((int)Float.parseFloat(obj.get("typerand").toString())));
                 t.setTyperand(obj.get("typerand").toString());
                               // t.setDescription(obj.get("description").toString());
@@ -105,7 +114,7 @@ public class RandonneeServices {
     }
     
     public ArrayList<Randonnee> getAllTasks(){
-        String url = Statics.BASE_URL+"/apirandonnee";
+        String url = Statics.BASE_URL+"/listrandA";
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {

@@ -20,6 +20,7 @@ import com.codename1.ui.spinner.Picker;
 import com.pi.tevent.Entities.Camping;
 import com.pi.tevent.Entities.Randonnee;
 import com.pi.tevent.Services.CampingServices;
+import com.codename1.ui.Toolbar;
 
 /**
  *
@@ -32,7 +33,17 @@ public class AjouterCamping extends  BaseForm {
                 
                  
                 setLayout(BoxLayout.y());
-                
+                Toolbar tb = new Toolbar(true);
+                setToolbar(tb);
+               // Form previous = Display.getInstance().getCurrent();
+                tb.setBackCommand("", e -> previous.showBack());
+                getTitleArea().setUIID("Container");
+                getContentPane().setScrollVisible(false);
+                setUIID("Profile");
+
+                tb.addSearchCommand(e -> {});
+                this.add(createDLineSeparator());   
+                this.add(createDLineSeparator());
                 TextField tfnom = new TextField("","Nom de l'evenement") ;
                // PickerComponent datedebut = PickerComponent.createDate(new Date()).label("Date début");
                Picker datedebut = new Picker();

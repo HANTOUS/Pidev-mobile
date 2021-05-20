@@ -21,6 +21,7 @@ import com.codename1.ui.spinner.Picker;
 import com.pi.tevent.Entities.Randonnee;
 import com.pi.tevent.Services.RandonneeServices;
 import java.util.Date;
+import com.codename1.ui.Toolbar;
 
 /**
  *
@@ -31,7 +32,17 @@ public class AjouterRandonnee extends BaseForm {
     public AjouterRandonnee(Form previous) {
         setTitle("Ajouter randonnee");
         setLayout(BoxLayout.y());
+        Toolbar tb = new Toolbar(true);
+        setToolbar(tb);
+       // Form previous = Display.getInstance().getCurrent();
+        tb.setBackCommand("", e -> previous.showBack());
+        getTitleArea().setUIID("Container");
+        getContentPane().setScrollVisible(false);
+        setUIID("Profile");
 
+        tb.addSearchCommand(e -> {});
+        this.add(createDLineSeparator());
+        this.add(createDLineSeparator());
         TextField tfnom = new TextField("", "Nom de l'evenement");
         // PickerComponent datedebut = PickerComponent.createDate(new Date()).label("Date début");
         Picker datedebut = new Picker();
