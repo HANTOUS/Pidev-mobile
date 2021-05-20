@@ -41,9 +41,9 @@ public class HomeFormEvent extends BaseForm {
         
                 Button btnAfficherRandonnee = new Button("Afficher Randonnée");
                                 Button btnAfficherCamping = new Button("Afficher camping");
-                   Button btnSupprimerRandonnee = new Button("supprimer randonnee par id");
+              //     Button btnSupprimerRandonnee = new Button("supprimer randonnee par id");
                    Button btnSupprimerRandonnee2 = new Button("supprimer randonnee par nom");
-                   Button btnSupprimerCamping = new Button("supprimer camping par id");
+              //     Button btnSupprimerCamping = new Button("supprimer camping par id");
 
 
 
@@ -51,11 +51,11 @@ public class HomeFormEvent extends BaseForm {
         btnAjouterCamping.addActionListener(e -> new AjouterCamping(current).show());
         btnAfficherRandonnee.addActionListener(e -> new ListRandonnee(theme).show());
                 btnAfficherCamping.addActionListener(e -> new ListCamping(theme).show());
-                btnSupprimerRandonnee.addActionListener(e -> new SuppressionRandonnee().show());
+            //    btnSupprimerRandonnee.addActionListener(e -> new SuppressionRandonnee().show());
                 //btnSupprimerRandonnee2.addActionListener(e -> new SuppressionRandByNom().show());
-                btnSupprimerCamping.addActionListener(e -> new SuppressionCamping().show());
+            //    btnSupprimerCamping.addActionListener(e -> new SuppressionCamping().show());
 
-        addAll(btnAjouterRandonnee,btnAjouterCamping,btnAfficherRandonnee,btnAfficherCamping,btnSupprimerRandonnee/*,btnSupprimerRandonnee2*/); 
+        addAll(btnAjouterRandonnee,btnAjouterCamping,btnAfficherRandonnee,btnAfficherCamping/*,btnSupprimerRandonnee/*,btnSupprimerRandonnee2*/); 
 
         
 

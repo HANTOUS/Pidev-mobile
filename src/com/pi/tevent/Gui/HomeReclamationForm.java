@@ -14,7 +14,8 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
-
+import com.codename1.ui.Display;
+import com.codename1.ui.Toolbar;
 /**
  *
  * @author Salim
@@ -22,8 +23,25 @@ import com.codename1.ui.util.Resources;
 public class HomeReclamationForm extends BaseForm {
     
     public HomeReclamationForm(Resources res){
+        add(createLineSeparator());
+        add(createLineSeparator());
+        Toolbar tb = new Toolbar(true);
+        setToolbar(tb);
+        getTitleArea().setUIID("Container");
+        setTitle("Profile");
+        getContentPane().setScrollVisible(false);
+        setUIID("Profile");
+        super.addSideMenu(res);
         
-        
+        tb.addSearchCommand(e -> {});
+        add(createLineSeparator());
+        add(createLineSeparator());
+        add(createLineSeparator());
+        add(createLineSeparator());
+        add(createLineSeparator());
+        add(createLineSeparator());
+        add(createLineSeparator());
+
         setTitle("Home Reclamation");
         setLayout(BoxLayout.y());
         //add(BoxLayout.y(), new Label(res.getImage("Logo-Off.png"), "LogoLabel"));

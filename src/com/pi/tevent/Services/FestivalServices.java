@@ -59,26 +59,38 @@ public class FestivalServices {
         }
         return instance;
     }
-     public boolean addfestival(Festival p) {
+     public void addfestival(Festival p) {
+        
+         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-M-dd");  
+        String dateD = formatter.format(p.getDatedebut()); 
+        String dateF = formatter.format(p.getDatefin()); 
         
         
-        
-        
-        String url = Statics.BASE_URL+"/festival/addfestivalJSON?nomevent="+ p.getNomevent()+"&db="+p.getDatedebut()+
-                "&df="+p.getDatefin()+"&hb="+p.getHeuredebut()+"&hf="+p.getHeurefin()+"&lieu="+p.getLieu()+
+        String url = Statics.BASE_URL+"/festival/addfestivalJSON?nomevent="+ p.getNomevent()+"&db="+dateD+
+                "&df="+dateF+"&hb="+p.getHeuredebut()+"&hf="+p.getHeurefin()+"&lieu="+p.getLieu()+
                 "&nbmax="+p.getNbmaxparticipant()+"&typefest="+p.getType_fest()+"&artist="+p.getArtist()+"&pic="+p.getPicture()+
                 "&nbinv="+p.getNb_invit()+"&description="+p.getDescription()+"&tarif="+p.getTarif()+"&type="+p.getType(); //création de l'URL
-        req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+       System.out.println("url: "+url);      
+  req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+      
+       System.out.println("req: "+req);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
-                req.removeResponseListener(this); //Supprimer cet actionListener
+                
+                /*resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                System.out.println("result: "+resultOK);
+                req.removeResponseListener(this); //Supprimer cet actionListener*/
+                byte[] data = (byte[]) evt.getMetaData();
+            String responseData = new String(data);
+            System.out.println("data: "+responseData);
+            req.removeResponseListener(this);
+            
                
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
-        return resultOK;
+       // return resultOK;
   }
      
       public ArrayList<Festival> getAllFestivals(){

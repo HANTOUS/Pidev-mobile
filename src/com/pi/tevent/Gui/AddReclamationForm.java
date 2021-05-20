@@ -22,13 +22,16 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.pi.tevent.Entities.Reclamation;
+import com.pi.tevent.Entities.Utilisateur;
 import com.pi.tevent.Services.ReclamationServices;
-
+import com.pi.tevent.utils.SessionUser;
+import com.codename1.messaging.Message;
 /**
  *
  * @author Salim
  */
 public class AddReclamationForm extends BaseForm {
+        Utilisateur user ;
 
     
     public AddReclamationForm(Resources res) {
@@ -38,7 +41,8 @@ public class AddReclamationForm extends BaseForm {
             Form previous = Display.getInstance().getCurrent();
         tb.setBackCommand("", e -> previous.showBack());
         getContentPane().setScrollVisible(false);
-        
+                                             user =  SessionUser.getUser();
+
         setTitle("Ajouter Reclamation");
         setLayout(BoxLayout.y());
         this.add(createDLineSeparator());
@@ -55,19 +59,19 @@ this.add(createLineSeparator(000000));
             if(tfsujet.getText() =="" || tfcontenu.getText() == "")
             Dialog.show("Alert", "verifiez vos données SVP",new Command ("OK"));
             else {
-                try {
-                    Reclamation r = new Reclamation(Integer.parseInt(tfuser_id.getText()), tfsujet.getText(),tfcontenu.getText());
-                if (new ReclamationServices().addRec(r))
-                Dialog.show("Success", "Connection accepté",new Command ("OK"));
-                else 
-                    Dialog.show("Error", "Erreur de Serveur",new Command ("OK"));
-                }catch (NumberFormatException e){
-                    Dialog.show("Error", "il faut que user id soit un nombre !",new Command ("OK"));
-                }
+                    Reclamation r = new Reclamation(user.getId(), tfsujet.getText(),tfcontenu.getText());
+                     
+               ReclamationServices.getInstance().addRec(r);
+                  //  System.out.println(x);
+                    Message m = new Message(user.getNom()+user.getPrenom()+"a ajouté une reclamation");
+                    Display.getInstance().sendMessage(new String[]{user.getEmail()}, "Reclamation ajouté", m);
+                    Dialog.show("Success", "Connection accepté",new Command ("OK"));
+                    new ListReclamationForm(res).show();
             }
             }
         
     });
-    addAll( tfuser_id, tfsujet, tfcontenu, btnAjouter);
+    addAll(tfsujet, tfcontenu, btnAjouter);
+
     }
     }

@@ -94,7 +94,7 @@ public class ListReclamationForm extends BaseForm {
         holderSU.add(TSUJET).add(SUJET);
         holderCO.add(TCONTENU).add(CONTENU);
         holderET.add(TETAT).add(ETAT);
-        
+
          supprimer.addActionListener(evt ->{
              
             new ReclamationServices().deleteReclamation(r);

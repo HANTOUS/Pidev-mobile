@@ -66,7 +66,7 @@ public class RandonneeServices {
     public void deleteComm(int id) {
         ConnectionRequest con = new ConnectionRequest();
       //  "http://localhost/pi-dev/web/app_dev.php/forum/supprimerComMobile?idCom=" + id;
-        String Url = Statics.BASE_URL+"/deleteRandonnejson&id=" + id;
+        String Url = Statics.BASE_URL+"/deleteRandonnejson?id=" + id;
         con.setUrl(Url);
         con.addResponseListener((e) -> {
             String str = new String(con.getResponseData());

@@ -43,18 +43,22 @@ public class ReclamationServices {
 
         return instance;
     }
-    public boolean addRec(Reclamation r){
+    public void addRec(Reclamation r){
         String url = Statics.BASE_URL+"/ajouterreclamationmobile?user_id="+r.getUser_id()+"&sujet="+r.getSujet()+"&contenu="+r.getContenu()+"&etat="+r.getEtat();
-        ConnectionRequest req = new ConnectionRequest(url);
+        req.setUrl(url);
+        System.out.println(req.getResponseCode());
         req.addResponseCodeListener(new ActionListener<NetworkEvent>(){
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                ResultOK=req.getResponseCode()==200;
+                byte[] data = (byte[]) evt.getMetaData();
+            String responseData = new String(data);
+            System.out.println("data: "+responseData);
+            req.removeResponseListener(this);
             }
             
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
-        return ResultOK;
+       // return ResultOK;
     }
     
     

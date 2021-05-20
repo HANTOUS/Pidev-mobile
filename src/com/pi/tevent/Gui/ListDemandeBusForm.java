@@ -116,13 +116,13 @@ getTitleArea().setUIID("Container");
         holderNB.add(titreNb).add(lNb_participants);
         holderVD.add(titreVille_depart).add(lVille_depart);
         holderVA.add(titreVille_arrivee).add(lVille_arrivee);
-        //holderJL.add(titreJour_location).add(lJour_location);
+        holderJL.add(titreJour_location).add(lJour_location);
         holder1.add(holderNB).add(holderVD).add(holderVA);
         
         
         
         
-//       holder.add(lNb_participants).add(lVille_depart).add(lVille_arrivee).add(lJour_location);
+   //    holder.add(lNb_participants).add(lVille_depart).add(lVille_arrivee).add(lJour_location);
         holder.add(img).add(holder1);
         lNb_participants.addPointerPressedListener(evt -> {
             new DetailsDemandeBusForm(theme, db).show();

@@ -64,13 +64,13 @@ public class ListRandonnee extends BaseForm{
         
         current = this;
         for (Randonnee r : list){
-            this.add(item(r));
+            this.add(item(r,RandonneeServices.getInstance()));
             //System.out.println(r);
         }
-        addGUIs();
+     //   addGUIs();
     }
     
-    public Container item(Randonnee r){
+    public Container item(Randonnee r,RandonneeServices rs){
         Button supprimer = new Button(FontImage.MATERIAL_DELETE);
 
         
@@ -117,9 +117,14 @@ public class ListRandonnee extends BaseForm{
             new ListRandonnee(theme).show();
              refreshTheme();
          });*/
-         
+         supprimer.addActionListener(evt ->{
+             
+            rs.deleteComm(r.getId());
+            new ListRandonnee(theme).show();
+             refreshTheme();
+         });
          holder1.add(holderID).add(holderSU).add(holderCO).add(holderET).add(holdernb).add(holderloc);
-         holder.add(holder1)/*.add(supprimer)*/;
+         holder.add(holder1).add(supprimer);
          holderParent.add(holder).add(createLineSeparator(000000));
 
         
@@ -127,7 +132,7 @@ public class ListRandonnee extends BaseForm{
         
     }
     
-    public void addGUIs(){
+   /* public void addGUIs(){
         
         Container holderLabel = new Container(BoxLayout.x());
         

@@ -86,14 +86,13 @@ public class ListCamping extends BaseForm{
         
         current = this;
         for (Camping r : list){
-            this.add(item(r));
+            this.add(item(r,CampingServices.getInstance()));
             //System.out.println(r);
         }
-        addGUIs();
+       // addGUIs();
     }
     
-    public Container item(Camping r){
-        Button supprimer = new Button(FontImage.MATERIAL_DELETE);
+    public Container item(Camping r,CampingServices cs){
 
         
         Container holderParent = new Container(BoxLayout.y());
@@ -139,9 +138,15 @@ public class ListCamping extends BaseForm{
             new ListCamping(theme).show();
              refreshTheme();
          });*/
-         
+         Button supprimer = new Button(FontImage.MATERIAL_DELETE);
+         supprimer.addActionListener(evt ->{
+             
+            cs.deleteComm(r.getId());
+            new ListCamping(theme).show();
+             refreshTheme();
+         });
          holder1.add(holderID).add(holderSU).add(holderCO).add(holderET).add(holdernb).add(holderloc);
-         holder.add(holder1)/*.add(supprimer)*/;
+         holder.add(holder1).add(supprimer);
          holderParent.add(holder).add(createLineSeparator(000000));
 
         
@@ -149,7 +154,7 @@ public class ListCamping extends BaseForm{
         
     }
     
-    public void addGUIs(){
+  /*  public void addGUIs(){
         
         Container holderLabel = new Container(BoxLayout.x());
         
@@ -166,5 +171,5 @@ public class ListCamping extends BaseForm{
         for ( Camping r : list){
             this.add(item(r));
         }
-    }    
+    }    */
 }

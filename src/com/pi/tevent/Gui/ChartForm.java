@@ -37,9 +37,9 @@ public class ChartForm extends BaseForm{
     DemandeChauffeurServices dcs = new DemandeChauffeurServices();
     Utilisateur user ;
 
-                ArrayList<DemandeMateriel> listMat = DemandeMaterielServices.getInstance().getDemandeMaterielByUser(user.getId());
-                ArrayList<DemandeBus> listBus = dbs.getDemandeBusByUser(user.getId());
-                ArrayList<DemandeChauffeur> listChauff = dcs.getDemandeChauffeurByUser(user.getId());
+                ArrayList<DemandeMateriel> listMat = dms.getAllDemandeMateriel();
+                ArrayList<DemandeBus> listBus = dbs.getAllDemandeBus();
+                ArrayList<DemandeChauffeur> listChauff = dcs.getAllDemandeChauffeur();
                 
                 
                 double nbMat ;

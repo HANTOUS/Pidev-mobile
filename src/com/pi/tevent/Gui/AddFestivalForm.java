@@ -144,8 +144,11 @@ public class AddFestivalForm extends BaseForm{
                    
                    
 
-                   if (FestivalServices.getInstance().addfestival(f))
+                  // if (FestivalServices.getInstance().addfestival(f))
+                FestivalServices.getInstance().addfestival(f);
                        Dialog.show("success","festival added",new Command("ok"));
+                   /* else
+                        Dialog.show("echec","festival nope",new Command("ok"));*/
                    
                    
                }

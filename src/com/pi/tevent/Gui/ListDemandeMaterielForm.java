@@ -46,15 +46,16 @@ getTitleArea().setUIID("Container");
         getContentPane().setScrollVisible(false);
         setUIID("Profile");
         this.theme = theme ; 
+         System.out.println(user.getId());
                         list = DemandeMaterielServices.getInstance().getDemandeMaterielByUser(user.getId());
-
+                        System.out.println(list);
         addGUIs();
 //                        this.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, evt -> previous.showBack());
     }
     
     public Container item(DemandeMateriel dm){
 //                ImageViewer img = new ImageViewer(theme.getImage("camping.png"));
-Image img = theme.getImage("camping.png");
+        Image img = theme.getImage("camping.png");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 15) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() /15);
         }
@@ -80,7 +81,7 @@ Image img = theme.getImage("camping.png");
        holder1.add(lMateriel).add(lQuantite);
        holder2.add(lDateDebut);
        holder.add(holder1).add(holder2);
-     holderParent.add(img).add(holder);
+         holderParent.add(img).add(holder);
        lMateriel.addPointerPressedListener(evt ->{
        new DetailsDemandeMaterielForm(theme,dm).show();
        });
